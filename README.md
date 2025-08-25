@@ -48,9 +48,11 @@ The goal was to implement a complete **RTL-to-GDSII flow** for the `wbqspiflash`
   - **Metal2 (Layer 69)** → Vertical pins.  
   - **Metal3 (Layer 70)** → Horizontal pins.  
 - Confirmed that LEF dimensions matched the floorplan reports exactly.  
+
 | **GDS** | **LEF** |
 |----------------|----------------|
-| ![Input Image](https://github.com/MohamedHussein27/ASIC_flow_for_Wishbone_QSPI_Flash/blob/main/Images/GDS.png) | ![Output Image](https://github.com/MohamedHussein27/ASIC_flow_for_Wishbone_QSPI_Flash/blob/main/Images/LEF.png) |
+| ![GDS Layout](https://github.com/MohamedHussein27/ASIC_flow_for_Wishbone_QSPI_Flash/blob/main/Images/GDS.png) | ![LEF Layout](https://github.com/MohamedHussein27/ASIC_flow_for_Wishbone_QSPI_Flash/blob/main/Images/LEF.png) |
+
 
 ---
 
