@@ -1,0 +1,17 @@
+Design Name: wbqspiflash
+Run Directory: /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly
+----------------------------------------
+
+Magic DRC Summary:
+Source: /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly/logs/signoff/36-wbqspiflash.lvs.lef.log
+LVS reports no net, device, pin, or property mismatches.
+Total errors = 0
+----------------------------------------
+
+Antenna Summary:
+No antenna report found.

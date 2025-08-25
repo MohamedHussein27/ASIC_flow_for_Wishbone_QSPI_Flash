@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 41027 43171
+string GDS_END 9862090
+string GDS_FILE /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/results/signoff/wbqspiflash.magic.gds
+string GDS_START 965442
+<< end >>

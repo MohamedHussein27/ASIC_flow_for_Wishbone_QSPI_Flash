@@ -1,0 +1,17 @@
+
+Input: /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly/results/routing/wbqspiflash.def
+Output: /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly/results/signoff/wbqspiflash.klayout.gds
+Design: wbqspiflash
+Technology File: /home/opentools/OpenLane/pdks/sky130A/libs.tech/klayout/sky130A.lyt
+GDS File List: ['/home/opentools/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds']
+LEF File: /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly/tmp/merged.nom.lef
+
+[INFO] Clearing cells...
+[INFO] Merging GDS files...
+	/home/opentools/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+[INFO] Copying toplevel cell 'wbqspiflash'
+WARNING: no fill config file specified
+[INFO] Checking for missing GDS...
+[INFO] All LEF cells have matching GDS cells
+[INFO] Writing out GDS '/home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_congestion_friendly/results/signoff/wbqspiflash.klayout.gds'
+[INFO] Done.

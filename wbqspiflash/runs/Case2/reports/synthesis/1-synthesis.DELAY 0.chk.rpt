@@ -1,0 +1,47 @@
+
+23. Executing CHECK pass (checking for obvious problems).
+Checking module wbqspiflash...
+Warning: Wire wbqspiflash.\o_wb_stall is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [31] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [30] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [29] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [28] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [27] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [26] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [25] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [24] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [23] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [22] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [21] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [20] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [19] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [18] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [17] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [16] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [15] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [14] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [13] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [12] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [11] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [10] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [9] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [8] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [7] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [6] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [5] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [4] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [3] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [2] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [1] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [0] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_ack is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_sck is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_mod [1] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_mod [0] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [3] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [2] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [1] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [0] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_cs_n is used but has no driver.
+Warning: Wire wbqspiflash.\o_interrupt is used but has no driver.
+Found and reported 43 problems.

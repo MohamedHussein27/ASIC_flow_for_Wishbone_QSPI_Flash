@@ -1,0 +1,2246 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.12+45 (git sha1 cfe940a98, gcc 11.2.0-19ubuntu1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v
+Parsing SystemVerilog input from `/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v' to AST representation.
+Generating RTLIL representation for module `\wbqspiflash'.
+Generating RTLIL representation for module `\llqspi'.
+Successfully finished Verilog frontend.
+
+2. Generating Graphviz representation of design.
+Writing dot description to `/home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/tmp/synthesis/hierarchy.dot'.
+Dumping module wbqspiflash to page 1.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \wbqspiflash
+Used module:     \llqspi
+
+3.2. Analyzing design hierarchy..
+Top module:  \wbqspiflash
+Used module:     \llqspi
+Removed 0 unused modules.
+Mapping positional arguments of cell wbqspiflash.lldriver (llqspi).
+
+4. Executing TRIBUF pass.
+
+5. Executing SYNTH pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \wbqspiflash
+Used module:     \llqspi
+
+5.1.2. Analyzing design hierarchy..
+Top module:  \wbqspiflash
+Used module:     \llqspi
+Removed 0 unused modules.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+Cleaned up 1 empty switch.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 19 switch rules as full_case in process $proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240 in module llqspi.
+Marked 67 switch rules as full_case in process $proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1 in module wbqspiflash.
+Removed a total of 0 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 24 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$288'.
+  Set init value: \o_word = 0
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$287'.
+  Set init value: \o_mod = 2'00
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$286'.
+  Set init value: \r_input = 31'0000000000000000000000000000000
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$285'.
+  Set init value: \o_busy = 1'0
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$284'.
+  Set init value: \o_valid = 1'0
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$283'.
+  Set init value: \o_dat = 4'1101
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$282'.
+  Set init value: \o_cs_n = 1'1
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$281'.
+  Set init value: \o_sck = 1'1
+Found init rule in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$280'.
+  Set init value: \state = 3'000
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$239'.
+  Set init value: \spif_ctrl = 1'0
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$238'.
+  Set init value: \spif_override = 1'1
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$237'.
+  Set init value: \o_interrupt = 1'0
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$236'.
+  Set init value: \quad_mode_enabled = 1'0
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$235'.
+  Set init value: \spi_len = 2'00
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$234'.
+  Set init value: \spi_wr = 1'0
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$233'.
+  Set init value: \o_wb_stall = 1'1
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$232'.
+  Set init value: \o_wb_ack = 1'0
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$231'.
+  Set init value: \state = 5'00000
+Found init rule in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$230'.
+  Set init value: \write_in_progress = 1'0
+  Set init value: \write_protect = 1'1
+  Set init value: \erased_sector = 6'000000
+  Set init value: \dirty_sector = 1'1
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$288'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$287'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$286'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$285'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$284'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$283'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$282'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$281'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$280'.
+Creating decoders for process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+     1/13: $0\o_busy[0:0]
+     2/13: $0\o_valid[0:0]
+     3/13: $0\r_input[30:0]
+     4/13: $0\r_word[31:0]
+     5/13: $0\r_dir[0:0]
+     6/13: $0\r_spd[0:0]
+     7/13: $0\o_dat[3:0]
+     8/13: $0\o_mod[1:0]
+     9/13: $0\o_cs_n[0:0]
+    10/13: $0\o_sck[0:0]
+    11/13: $0\o_word[31:0]
+    12/13: $0\state[2:0]
+    13/13: $0\spi_len[5:0]
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$239'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$238'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$237'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$236'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$235'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$234'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$233'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$232'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$231'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$230'.
+Creating decoders for process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+     1/26: $0\last_status[7:0] [7]
+     2/26: $0\last_status[7:0] [6:5]
+     3/26: $0\last_status[7:0] [4:0]
+     4/26: $0\spif_req[0:0]
+     5/26: $0\spif_ctrl[0:0]
+     6/26: $0\state[4:0]
+     7/26: $0\spif_data[31:0]
+     8/26: $0\spif_cmd[0:0]
+     9/26: $0\quad_mode_enabled[0:0]
+    10/26: $0\reset_counter[9:0]
+    11/26: $0\spif_override[0:0]
+    12/26: $0\spif_addr[19:0]
+    13/26: $0\dirty_sector[0:0]
+    14/26: $0\erased_sector[5:0]
+    15/26: $0\write_protect[0:0]
+    16/26: $0\write_in_progress[0:0]
+    17/26: $0\spi_len[1:0]
+    18/26: $0\spi_in[31:0]
+    19/26: $0\spi_dir[0:0]
+    20/26: $0\spi_spd[0:0]
+    21/26: $0\spi_hold[0:0]
+    22/26: $0\spi_wr[0:0]
+    23/26: $0\o_interrupt[0:0]
+    24/26: $0\o_wb_data[31:0]
+    25/26: $0\o_wb_stall[0:0]
+    26/26: $0\o_wb_ack[0:0]
+
+5.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\llqspi.\spi_len' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3436' with positive edge clock.
+Creating register for signal `\llqspi.\state' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3437' with positive edge clock.
+Creating register for signal `\llqspi.\o_word' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3438' with positive edge clock.
+Creating register for signal `\llqspi.\o_valid' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3439' with positive edge clock.
+Creating register for signal `\llqspi.\o_busy' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3440' with positive edge clock.
+Creating register for signal `\llqspi.\o_sck' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3441' with positive edge clock.
+Creating register for signal `\llqspi.\o_cs_n' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3442' with positive edge clock.
+Creating register for signal `\llqspi.\o_mod' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3443' with positive edge clock.
+Creating register for signal `\llqspi.\o_dat' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3444' with positive edge clock.
+Creating register for signal `\llqspi.\r_spd' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3445' with positive edge clock.
+Creating register for signal `\llqspi.\r_dir' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3446' with positive edge clock.
+Creating register for signal `\llqspi.\r_word' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3447' with positive edge clock.
+Creating register for signal `\llqspi.\r_input' using process `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+  created $dff cell `$procdff$3448' with positive edge clock.
+Creating register for signal `\wbqspiflash.\o_wb_ack' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3449' with positive edge clock.
+Creating register for signal `\wbqspiflash.\o_wb_stall' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3450' with positive edge clock.
+Creating register for signal `\wbqspiflash.\o_wb_data' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3451' with positive edge clock.
+Creating register for signal `\wbqspiflash.\o_interrupt' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3452' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spi_wr' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3453' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spi_hold' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3454' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spi_spd' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3455' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spi_dir' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3456' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spi_in' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3457' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spi_len' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3458' with positive edge clock.
+Creating register for signal `\wbqspiflash.\write_in_progress' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3459' with positive edge clock.
+Creating register for signal `\wbqspiflash.\write_protect' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3460' with positive edge clock.
+Creating register for signal `\wbqspiflash.\erased_sector' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3461' with positive edge clock.
+Creating register for signal `\wbqspiflash.\dirty_sector' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3462' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spif_addr' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3463' with positive edge clock.
+Creating register for signal `\wbqspiflash.\last_status' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3464' with positive edge clock.
+Creating register for signal `\wbqspiflash.\reset_counter' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3465' with positive edge clock.
+Creating register for signal `\wbqspiflash.\quad_mode_enabled' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3466' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spif_cmd' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3467' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spif_override' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3468' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spif_data' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3469' with positive edge clock.
+Creating register for signal `\wbqspiflash.\state' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3470' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spif_ctrl' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3471' with positive edge clock.
+Creating register for signal `\wbqspiflash.\spif_req' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3472' with positive edge clock.
+Creating register for signal `\wbqspiflash.\alt_cmd' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3473' with positive edge clock.
+Creating register for signal `\wbqspiflash.\alt_ctrl' using process `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+  created $dff cell `$procdff$3474' with positive edge clock.
+
+5.2.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$288'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$287'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$286'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$285'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$284'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$283'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$282'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$281'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$280'.
+Found and cleaned up 25 empty switches in `\llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+Removing empty process `llqspi.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1362$240'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$239'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$238'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$237'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$236'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$235'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$234'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$233'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$232'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$231'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:0$230'.
+Found and cleaned up 102 empty switches in `\wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+Removing empty process `wbqspiflash.$proc$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:195$1'.
+Cleaned up 127 empty switches.
+
+5.2.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module llqspi.
+<suppressed ~21 debug messages>
+Optimizing module wbqspiflash.
+<suppressed ~110 debug messages>
+
+5.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module llqspi.
+<suppressed ~1 debug messages>
+
+5.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 9 unused cells and 1137 unused wires.
+<suppressed ~10 debug messages>
+
+5.6. Executing CHECK pass (checking for obvious problems).
+Checking module wbqspiflash...
+Found and reported 0 problems.
+
+5.7. Executing OPT pass (performing simple optimizations).
+
+5.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~597 debug messages>
+Removed a total of 199 cells.
+
+5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$2998: { \write_in_progress \dirty_sector \lldriver.o_busy $not$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:401$27_Y \quad_mode_enabled 7'0000000 \erased_sector 14'00000000000000 } -> { 1'0 \dirty_sector \lldriver.o_busy $not$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:401$27_Y \quad_mode_enabled 7'0000000 \erased_sector 14'00000000000000 }
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\lldriver.$procmux$341.
+    dead port 2/2 on $mux $flatten\lldriver.$procmux$349.
+    dead port 2/2 on $mux $flatten\lldriver.$procmux$557.
+Removed 3 multiplexer ports.
+<suppressed ~46 debug messages>
+
+5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+    New ctrl vector for $pmux cell $procmux$2069: { $auto$opt_reduce.cc:134:opt_mux$3476 $procmux$1236_CMP }
+    New ctrl vector for $pmux cell $procmux$2075: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y $auto$opt_reduce.cc:134:opt_mux$3478 }
+    New ctrl vector for $pmux cell $procmux$2117: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3480 $procmux$1288_CMP }
+    New ctrl vector for $pmux cell $procmux$2129: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3482 }
+    New ctrl vector for $pmux cell $procmux$2261: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y $auto$opt_reduce.cc:134:opt_mux$3484 }
+    New ctrl vector for $pmux cell $procmux$2315: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3486 }
+    New ctrl vector for $pmux cell $procmux$2695: $auto$opt_reduce.cc:134:opt_mux$3488
+    New ctrl vector for $pmux cell $procmux$2745: $auto$opt_reduce.cc:134:opt_mux$3490
+    New ctrl vector for $pmux cell $procmux$2751: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y $auto$opt_reduce.cc:134:opt_mux$3492 }
+    New ctrl vector for $pmux cell $procmux$2793: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3494 }
+    New ctrl vector for $pmux cell $procmux$2805: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3496 }
+    New ctrl vector for $pmux cell $procmux$3129: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y $auto$opt_reduce.cc:134:opt_mux$3498 }
+    New ctrl vector for $pmux cell $procmux$3135: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y $auto$opt_reduce.cc:134:opt_mux$3500 $procmux$1236_CMP }
+    New ctrl vector for $pmux cell $procmux$3181: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3502 }
+    New ctrl vector for $pmux cell $procmux$3192: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3504 $procmux$1288_CMP }
+    New ctrl vector for $pmux cell $procmux$3279: $auto$opt_reduce.cc:134:opt_mux$3506
+    New ctrl vector for $pmux cell $procmux$3338: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y $auto$opt_reduce.cc:134:opt_mux$3508 }
+    New ctrl vector for $pmux cell $procmux$3344: $auto$opt_reduce.cc:134:opt_mux$3510
+    New ctrl vector for $pmux cell $procmux$3386: { $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y $auto$opt_reduce.cc:134:opt_mux$3512 }
+    New ctrl vector for $pmux cell $procmux$3397: $auto$opt_reduce.cc:134:opt_mux$3514
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 20 changes.
+
+5.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~153 debug messages>
+Removed a total of 51 cells.
+
+5.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 0 unused cells and 253 unused wires.
+<suppressed ~1 debug messages>
+
+5.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~76 debug messages>
+
+5.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.7.16. Finished OPT passes. (There is nothing left to do.)
+
+5.8. Executing FSM pass (extract and optimize FSM).
+
+5.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking wbqspiflash.lldriver.state as FSM state register:
+    Register has an initialization value.
+Not marking wbqspiflash.spi_len as FSM state register:
+    Users of register don't seem to benefit from recoding.
+    Register has an initialization value.
+Not marking wbqspiflash.state as FSM state register:
+    Register has an initialization value.
+
+5.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.9. Executing OPT pass (performing simple optimizations).
+
+5.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~76 debug messages>
+
+5.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$3474 ($dff) from module wbqspiflash (D = \reset_counter [0], Q = \alt_ctrl, rval = 1'1).
+Adding SRST signal on $procdff$3473 ($dff) from module wbqspiflash (D = \reset_counter [3], Q = \alt_cmd, rval = 1'1).
+Adding SRST signal on $procdff$3472 ($dff) from module wbqspiflash (D = $procmux$1001_Y, Q = \spif_req, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$3517 ($sdff) from module wbqspiflash (D = $procmux$998_Y, Q = \spif_req).
+Adding EN signal on $procdff$3471 ($dff) from module wbqspiflash (D = $procmux$1076_Y, Q = \spif_ctrl).
+Adding SRST signal on $procdff$3470 ($dff) from module wbqspiflash (D = $procmux$1343_Y, Q = \state, rval = 5'00001).
+Adding EN signal on $auto$ff.cc:262:slice$3570 ($sdff) from module wbqspiflash (D = $procmux$1343_Y, Q = \state).
+Adding EN signal on $procdff$3469 ($dff) from module wbqspiflash (D = $procmux$1418_Y, Q = \spif_data).
+Adding SRST signal on $procdff$3468 ($dff) from module wbqspiflash (D = $procmux$1593_Y, Q = \spif_override, rval = 1'1).
+Adding EN signal on $procdff$3467 ($dff) from module wbqspiflash (D = $procmux$1496_Y, Q = \spif_cmd).
+Adding EN signal on $procdff$3466 ($dff) from module wbqspiflash (D = $procmux$1536_Y, Q = \quad_mode_enabled).
+Adding SRST signal on $procdff$3465 ($dff) from module wbqspiflash (D = $procmux$1584_Y, Q = \reset_counter, rval = 10'1111111100).
+Adding EN signal on $auto$ff.cc:262:slice$3796 ($sdff) from module wbqspiflash (D = $sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:246$9_Y, Q = \reset_counter).
+Adding SRST signal on $procdff$3464 ($dff) from module wbqspiflash (D = { $procmux$724_Y $procmux$814_Y $procmux$895_Y }, Q = \last_status, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:262:slice$3802 ($sdff) from module wbqspiflash (D = { $procmux$688_Y $procmux$859_Y }, Q = { \last_status [7] \last_status [4:0] }).
+Adding EN signal on $auto$ff.cc:262:slice$3802 ($sdff) from module wbqspiflash (D = $procmux$778_Y, Q = \last_status [6:5]).
+Adding EN signal on $procdff$3463 ($dff) from module wbqspiflash (D = $procmux$1673_Y, Q = \spif_addr).
+Adding EN signal on $procdff$3462 ($dff) from module wbqspiflash (D = $procmux$1704_Y, Q = \dirty_sector).
+Adding EN signal on $procdff$3461 ($dff) from module wbqspiflash (D = \spif_data [19:14], Q = \erased_sector).
+Adding EN signal on $procdff$3460 ($dff) from module wbqspiflash (D = $procmux$1878_Y, Q = \write_protect).
+Adding EN signal on $procdff$3459 ($dff) from module wbqspiflash (D = $procmux$1943_Y, Q = \write_in_progress).
+Adding EN signal on $procdff$3458 ($dff) from module wbqspiflash (D = $procmux$2167_Y, Q = \spi_len).
+Adding EN signal on $procdff$3457 ($dff) from module wbqspiflash (D = $procmux$2353_Y, Q = \spi_in).
+Adding SRST signal on $procdff$3456 ($dff) from module wbqspiflash (D = $procmux$2442_Y, Q = \spi_dir, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$4254 ($sdff) from module wbqspiflash (D = $procmux$2439_Y, Q = \spi_dir).
+Adding SRST signal on $procdff$3455 ($dff) from module wbqspiflash (D = $procmux$2533_Y, Q = \spi_spd, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$4286 ($sdff) from module wbqspiflash (D = $procmux$2530_Y, Q = \spi_spd).
+Adding SRST signal on $procdff$3454 ($dff) from module wbqspiflash (D = $procmux$2642_Y, Q = \spi_hold, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$4320 ($sdff) from module wbqspiflash (D = $procmux$2639_Y, Q = \spi_hold).
+Adding SRST signal on $procdff$3453 ($dff) from module wbqspiflash (D = $procmux$2840_Y, Q = \spi_wr, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$4332 ($sdff) from module wbqspiflash (D = $procmux$2840_Y, Q = \spi_wr).
+Adding EN signal on $procdff$3452 ($dff) from module wbqspiflash (D = $procmux$2929_Y, Q = \o_interrupt).
+Adding SRST signal on $auto$ff.cc:262:slice$4336 ($dffe) from module wbqspiflash (D = $procmux$2926_Y, Q = \o_interrupt, rval = 1'0).
+Adding EN signal on $procdff$3451 ($dff) from module wbqspiflash (D = $procmux$3013_Y, Q = \o_wb_data).
+Adding SRST signal on $procdff$3450 ($dff) from module wbqspiflash (D = $procmux$3227_Y, Q = \o_wb_stall, rval = 1'1).
+Adding EN signal on $auto$ff.cc:262:slice$4443 ($sdff) from module wbqspiflash (D = $procmux$3227_Y, Q = \o_wb_stall).
+Adding SRST signal on $procdff$3449 ($dff) from module wbqspiflash (D = $procmux$3428_Y, Q = \o_wb_ack, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$4457 ($sdff) from module wbqspiflash (D = $procmux$3428_Y, Q = \o_wb_ack).
+Adding EN signal on $flatten\lldriver.$procdff$3448 ($dff) from module wbqspiflash (D = $flatten\lldriver.$procmux$354_Y, Q = \lldriver.r_input).
+Adding EN signal on $flatten\lldriver.$procdff$3447 ($dff) from module wbqspiflash (D = $flatten\lldriver.$0\r_word[31:0], Q = \lldriver.r_word).
+Adding EN signal on $flatten\lldriver.$procdff$3446 ($dff) from module wbqspiflash (D = $flatten\lldriver.$0\r_dir[0:0], Q = \lldriver.r_dir).
+Adding EN signal on $flatten\lldriver.$procdff$3445 ($dff) from module wbqspiflash (D = $flatten\lldriver.$0\r_spd[0:0], Q = \lldriver.r_spd).
+Adding EN signal on $flatten\lldriver.$procdff$3444 ($dff) from module wbqspiflash (D = $flatten\lldriver.$procmux$470_Y, Q = \lldriver.o_dat).
+Adding SRST signal on $flatten\lldriver.$procdff$3443 ($dff) from module wbqspiflash (D = $flatten\lldriver.$procmux$498_Y, Q = \lldriver.o_mod, rval = 2'00).
+Adding EN signal on $auto$ff.cc:262:slice$4520 ($sdff) from module wbqspiflash (D = $flatten\lldriver.$procmux$498_Y, Q = \lldriver.o_mod).
+Adding EN signal on $flatten\lldriver.$procdff$3442 ($dff) from module wbqspiflash (D = $flatten\lldriver.$0\o_cs_n[0:0], Q = \lldriver.o_cs_n).
+Adding EN signal on $flatten\lldriver.$procdff$3441 ($dff) from module wbqspiflash (D = $flatten\lldriver.$procmux$551_Y, Q = \lldriver.o_sck).
+Adding SRST signal on $auto$ff.cc:262:slice$4537 ($dffe) from module wbqspiflash (D = $flatten\lldriver.$procmux$548_Y, Q = \lldriver.o_sck, rval = 1'0).
+Adding SRST signal on $flatten\lldriver.$procdff$3439 ($dff) from module wbqspiflash (D = $flatten\lldriver.$procmux$326_Y, Q = \lldriver.o_valid, rval = 1'0).
+Adding EN signal on $flatten\lldriver.$procdff$3438 ($dff) from module wbqspiflash (D = $flatten\lldriver.$procmux$560_Y, Q = \lldriver.o_word).
+Adding EN signal on $flatten\lldriver.$procdff$3437 ($dff) from module wbqspiflash (D = $flatten\lldriver.$0\state[2:0], Q = \lldriver.state).
+Adding EN signal on $flatten\lldriver.$procdff$3436 ($dff) from module wbqspiflash (D = $flatten\lldriver.$0\spi_len[5:0], Q = \lldriver.spi_len).
+
+5.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 164 unused cells and 162 unused wires.
+<suppressed ~165 debug messages>
+
+5.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+<suppressed ~26 debug messages>
+
+5.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~72 debug messages>
+
+5.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~876 debug messages>
+Removed a total of 292 cells.
+
+5.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 0 unused cells and 292 unused wires.
+<suppressed ~1 debug messages>
+
+5.9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.9.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.9.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+5.9.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.9.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.9.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.9.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.9.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.9.23. Finished OPT passes. (There is nothing left to do.)
+
+5.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 4 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:222$7 ($eq).
+Removed top 9 bits (of 10) from port B of cell wbqspiflash.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:246$9 ($sub).
+Removed top 3 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:249$10 ($eq).
+Removed top 1 bits (of 9) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3949 ($ne).
+Removed top 1 bits (of 12) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3619 ($ne).
+Removed top 1 bits (of 11) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3621 ($ne).
+Removed top 3 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:444$31 ($eq).
+Removed top 2 bits (of 11) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3623 ($ne).
+Removed top 2 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:485$43 ($eq).
+Removed top 1 bits (of 2) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3829 ($ne).
+Removed top 2 bits (of 6) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3577 ($ne).
+Removed top 1 bits (of 9) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3625 ($ne).
+Removed top 1 bits (of 8) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3627 ($ne).
+Removed top 2 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:644$58 ($eq).
+Removed top 2 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:661$63 ($eq).
+Removed top 5 bits (of 9) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3581 ($ne).
+Removed top 1 bits (of 7) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3629 ($ne).
+Removed top 2 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:680$67 ($eq).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:696$72 ($eq).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:709$76 ($eq).
+Removed top 1 bits (of 6) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3631 ($ne).
+Removed top 2 bits (of 5) from mux cell wbqspiflash.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:738$87 ($mux).
+Removed top 2 bits (of 5) from mux cell wbqspiflash.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:737$88 ($mux).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3633 ($ne).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:754$94 ($eq).
+Removed top 3 bits (of 7) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3587 ($ne).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:767$99 ($eq).
+Removed top 1 bits (of 2) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3637 ($ne).
+Removed top 1 bits (of 6) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3589 ($ne).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:785$106 ($eq).
+Removed top 2 bits (of 6) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3591 ($ne).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:808$112 ($eq).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:837$119 ($eq).
+Removed top 1 bits (of 28) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3599 ($ne).
+Removed top 1 bits (of 26) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3601 ($ne).
+Removed top 1 bits (of 5) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3823 ($ne).
+Removed top 4 bits (of 5) from mux cell wbqspiflash.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:968$145 ($mux).
+Removed top 1 bits (of 24) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3603 ($ne).
+Removed top 31 bits (of 32) from port B of cell wbqspiflash.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$164 ($add).
+Removed top 11 bits (of 32) from port Y of cell wbqspiflash.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$164 ($add).
+Removed top 11 bits (of 32) from port B of cell wbqspiflash.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$165 ($eq).
+Removed top 1 bits (of 19) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3607 ($ne).
+Removed top 1 bits (of 18) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3609 ($ne).
+Removed top 1 bits (of 17) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3611 ($ne).
+Removed top 2 bits (of 14) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3615 ($ne).
+Removed top 2 bits (of 26) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3573 ($ne).
+Removed cell wbqspiflash.$procmux$649 ($mux).
+Removed cell wbqspiflash.$procmux$651 ($mux).
+Removed cell wbqspiflash.$procmux$654 ($mux).
+Removed cell wbqspiflash.$procmux$657 ($mux).
+Removed cell wbqspiflash.$procmux$660 ($mux).
+Removed cell wbqspiflash.$procmux$663 ($mux).
+Removed cell wbqspiflash.$procmux$666 ($mux).
+Removed cell wbqspiflash.$procmux$669 ($mux).
+Removed cell wbqspiflash.$procmux$672 ($mux).
+Removed cell wbqspiflash.$procmux$675 ($mux).
+Removed cell wbqspiflash.$procmux$680 ($mux).
+Removed cell wbqspiflash.$procmux$683 ($mux).
+Removed cell wbqspiflash.$procmux$686 ($mux).
+Removed cell wbqspiflash.$procmux$730 ($mux).
+Removed cell wbqspiflash.$procmux$733 ($mux).
+Removed cell wbqspiflash.$procmux$736 ($mux).
+Removed cell wbqspiflash.$procmux$739 ($mux).
+Removed cell wbqspiflash.$procmux$744 ($mux).
+Removed cell wbqspiflash.$procmux$747 ($mux).
+Removed cell wbqspiflash.$procmux$750 ($mux).
+Removed cell wbqspiflash.$procmux$753 ($mux).
+Removed cell wbqspiflash.$procmux$756 ($mux).
+Removed cell wbqspiflash.$procmux$759 ($mux).
+Removed cell wbqspiflash.$procmux$762 ($mux).
+Removed cell wbqspiflash.$procmux$765 ($mux).
+Removed cell wbqspiflash.$procmux$770 ($mux).
+Removed cell wbqspiflash.$procmux$773 ($mux).
+Removed cell wbqspiflash.$procmux$776 ($mux).
+Removed cell wbqspiflash.$procmux$820 ($mux).
+Removed cell wbqspiflash.$procmux$822 ($mux).
+Removed cell wbqspiflash.$procmux$825 ($mux).
+Removed cell wbqspiflash.$procmux$828 ($mux).
+Removed cell wbqspiflash.$procmux$831 ($mux).
+Removed cell wbqspiflash.$procmux$834 ($mux).
+Removed cell wbqspiflash.$procmux$837 ($mux).
+Removed cell wbqspiflash.$procmux$840 ($mux).
+Removed cell wbqspiflash.$procmux$843 ($mux).
+Removed cell wbqspiflash.$procmux$846 ($mux).
+Removed cell wbqspiflash.$procmux$851 ($mux).
+Removed cell wbqspiflash.$procmux$854 ($mux).
+Removed cell wbqspiflash.$procmux$857 ($mux).
+Removed cell wbqspiflash.$procmux$1008 ($mux).
+Removed cell wbqspiflash.$procmux$1011 ($mux).
+Removed cell wbqspiflash.$procmux$1014 ($mux).
+Removed cell wbqspiflash.$procmux$1016 ($mux).
+Removed cell wbqspiflash.$procmux$1019 ($mux).
+Removed cell wbqspiflash.$procmux$1022 ($mux).
+Removed cell wbqspiflash.$procmux$1025 ($mux).
+Removed cell wbqspiflash.$procmux$1028 ($mux).
+Removed cell wbqspiflash.$procmux$1031 ($mux).
+Removed cell wbqspiflash.$procmux$1034 ($mux).
+Removed cell wbqspiflash.$procmux$1037 ($mux).
+Removed cell wbqspiflash.$procmux$1040 ($mux).
+Removed cell wbqspiflash.$procmux$1043 ($mux).
+Removed cell wbqspiflash.$procmux$1046 ($mux).
+Removed cell wbqspiflash.$procmux$1049 ($mux).
+Removed cell wbqspiflash.$procmux$1052 ($mux).
+Removed cell wbqspiflash.$procmux$1055 ($mux).
+Removed cell wbqspiflash.$procmux$1058 ($mux).
+Removed cell wbqspiflash.$procmux$1061 ($mux).
+Removed cell wbqspiflash.$procmux$1064 ($mux).
+Removed cell wbqspiflash.$procmux$1067 ($mux).
+Removed cell wbqspiflash.$procmux$1070 ($mux).
+Removed cell wbqspiflash.$procmux$1084 ($mux).
+Removed cell wbqspiflash.$procmux$1087 ($mux).
+Removed cell wbqspiflash.$procmux$1089 ($mux).
+Removed cell wbqspiflash.$procmux$1092 ($mux).
+Removed top 1 bits (of 5) from mux cell wbqspiflash.$procmux$1094 ($mux).
+Removed cell wbqspiflash.$procmux$1102 ($mux).
+Removed cell wbqspiflash.$procmux$1110 ($mux).
+Removed cell wbqspiflash.$procmux$1115 ($mux).
+Removed cell wbqspiflash.$procmux$1120 ($mux).
+Removed cell wbqspiflash.$procmux$1126 ($mux).
+Removed cell wbqspiflash.$procmux$1134 ($mux).
+Removed cell wbqspiflash.$procmux$1149 ($mux).
+Removed top 1 bits (of 4) from port B of cell wbqspiflash.$procmux$1156_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell wbqspiflash.$procmux$1157_CMP0 ($eq).
+Removed top 3 bits (of 5) from mux cell wbqspiflash.$procmux$1160 ($mux).
+Removed cell wbqspiflash.$procmux$1163 ($mux).
+Removed cell wbqspiflash.$procmux$1168 ($mux).
+Removed cell wbqspiflash.$procmux$1173 ($mux).
+Removed cell wbqspiflash.$procmux$1188 ($mux).
+Removed cell wbqspiflash.$procmux$1191 ($mux).
+Removed cell wbqspiflash.$procmux$1196 ($mux).
+Removed cell wbqspiflash.$procmux$1201 ($mux).
+Removed cell wbqspiflash.$procmux$1207 ($mux).
+Removed top 2 bits (of 5) from mux cell wbqspiflash.$procmux$1210 ($mux).
+Removed cell wbqspiflash.$procmux$1215 ($mux).
+Removed cell wbqspiflash.$procmux$1220 ($mux).
+Removed cell wbqspiflash.$procmux$1225 ($mux).
+Removed cell wbqspiflash.$procmux$1230 ($mux).
+Removed top 1 bits (of 5) from mux cell wbqspiflash.$procmux$1235 ($pmux).
+Removed top 1 bits (of 2) from port B of cell wbqspiflash.$procmux$1238_CMP0 ($eq).
+Removed cell wbqspiflash.$procmux$1268 ($mux).
+Removed cell wbqspiflash.$procmux$1273 ($mux).
+Removed cell wbqspiflash.$procmux$1276 ($mux).
+Removed top 3 bits (of 5) from mux cell wbqspiflash.$procmux$1279 ($mux).
+Removed cell wbqspiflash.$procmux$1284 ($mux).
+Removed top 1 bits (of 2) from port B of cell wbqspiflash.$procmux$1290_CMP0 ($eq).
+Removed cell wbqspiflash.$procmux$1292 ($mux).
+Removed cell wbqspiflash.$procmux$1303 ($mux).
+Removed cell wbqspiflash.$procmux$1306 ($mux).
+Removed top 1 bits (of 5) from mux cell wbqspiflash.$procmux$1308 ($mux).
+Removed cell wbqspiflash.$procmux$1325 ($mux).
+Removed top 3 bits (of 5) from mux cell wbqspiflash.$procmux$1328 ($mux).
+Removed cell wbqspiflash.$procmux$1341 ($mux).
+Removed cell wbqspiflash.$procmux$1350 ($mux).
+Removed cell wbqspiflash.$procmux$1353 ($mux).
+Removed cell wbqspiflash.$procmux$1356 ($mux).
+Removed cell wbqspiflash.$procmux$1358 ($mux).
+Removed cell wbqspiflash.$procmux$1361 ($mux).
+Removed cell wbqspiflash.$procmux$1364 ($mux).
+Removed cell wbqspiflash.$procmux$1367 ($mux).
+Removed cell wbqspiflash.$procmux$1370 ($mux).
+Removed cell wbqspiflash.$procmux$1373 ($mux).
+Removed cell wbqspiflash.$procmux$1376 ($mux).
+Removed cell wbqspiflash.$procmux$1379 ($mux).
+Removed cell wbqspiflash.$procmux$1382 ($mux).
+Removed cell wbqspiflash.$procmux$1385 ($mux).
+Removed cell wbqspiflash.$procmux$1388 ($mux).
+Removed cell wbqspiflash.$procmux$1391 ($mux).
+Removed cell wbqspiflash.$procmux$1394 ($mux).
+Removed cell wbqspiflash.$procmux$1397 ($mux).
+Removed cell wbqspiflash.$procmux$1400 ($mux).
+Removed cell wbqspiflash.$procmux$1403 ($mux).
+Removed cell wbqspiflash.$procmux$1406 ($mux).
+Removed cell wbqspiflash.$procmux$1409 ($mux).
+Removed cell wbqspiflash.$procmux$1412 ($mux).
+Removed cell wbqspiflash.$procmux$1415 ($mux).
+Removed cell wbqspiflash.$procmux$1418 ($mux).
+Removed cell wbqspiflash.$procmux$1428 ($mux).
+Removed cell wbqspiflash.$procmux$1431 ($mux).
+Removed cell wbqspiflash.$procmux$1434 ($mux).
+Removed cell wbqspiflash.$procmux$1436 ($mux).
+Removed cell wbqspiflash.$procmux$1439 ($mux).
+Removed cell wbqspiflash.$procmux$1442 ($mux).
+Removed cell wbqspiflash.$procmux$1445 ($mux).
+Removed cell wbqspiflash.$procmux$1448 ($mux).
+Removed cell wbqspiflash.$procmux$1451 ($mux).
+Removed cell wbqspiflash.$procmux$1454 ($mux).
+Removed cell wbqspiflash.$procmux$1457 ($mux).
+Removed cell wbqspiflash.$procmux$1460 ($mux).
+Removed cell wbqspiflash.$procmux$1463 ($mux).
+Removed cell wbqspiflash.$procmux$1466 ($mux).
+Removed cell wbqspiflash.$procmux$1469 ($mux).
+Removed cell wbqspiflash.$procmux$1472 ($mux).
+Removed cell wbqspiflash.$procmux$1475 ($mux).
+Removed cell wbqspiflash.$procmux$1478 ($mux).
+Removed cell wbqspiflash.$procmux$1481 ($mux).
+Removed cell wbqspiflash.$procmux$1484 ($mux).
+Removed cell wbqspiflash.$procmux$1487 ($mux).
+Removed cell wbqspiflash.$procmux$1490 ($mux).
+Removed cell wbqspiflash.$procmux$1505 ($mux).
+Removed cell wbqspiflash.$procmux$1507 ($mux).
+Removed cell wbqspiflash.$procmux$1510 ($mux).
+Removed cell wbqspiflash.$procmux$1513 ($mux).
+Removed cell wbqspiflash.$procmux$1516 ($mux).
+Removed cell wbqspiflash.$procmux$1519 ($mux).
+Removed cell wbqspiflash.$procmux$1522 ($mux).
+Removed cell wbqspiflash.$procmux$1525 ($mux).
+Removed cell wbqspiflash.$procmux$1528 ($mux).
+Removed cell wbqspiflash.$procmux$1531 ($mux).
+Removed cell wbqspiflash.$procmux$1534 ($mux).
+Removed cell wbqspiflash.$procmux$1600 ($mux).
+Removed cell wbqspiflash.$procmux$1603 ($mux).
+Removed cell wbqspiflash.$procmux$1606 ($mux).
+Removed cell wbqspiflash.$procmux$1608 ($mux).
+Removed cell wbqspiflash.$procmux$1611 ($mux).
+Removed cell wbqspiflash.$procmux$1614 ($mux).
+Removed cell wbqspiflash.$procmux$1617 ($mux).
+Removed cell wbqspiflash.$procmux$1620 ($mux).
+Removed cell wbqspiflash.$procmux$1623 ($mux).
+Removed cell wbqspiflash.$procmux$1626 ($mux).
+Removed cell wbqspiflash.$procmux$1629 ($mux).
+Removed cell wbqspiflash.$procmux$1632 ($mux).
+Removed cell wbqspiflash.$procmux$1635 ($mux).
+Removed cell wbqspiflash.$procmux$1638 ($mux).
+Removed cell wbqspiflash.$procmux$1641 ($mux).
+Removed cell wbqspiflash.$procmux$1644 ($mux).
+Removed cell wbqspiflash.$procmux$1648 ($mux).
+Removed cell wbqspiflash.$procmux$1650 ($mux).
+Removed cell wbqspiflash.$procmux$1652 ($mux).
+Removed cell wbqspiflash.$procmux$1655 ($mux).
+Removed cell wbqspiflash.$procmux$1658 ($mux).
+Removed cell wbqspiflash.$procmux$1661 ($mux).
+Removed cell wbqspiflash.$procmux$1664 ($mux).
+Removed cell wbqspiflash.$procmux$1667 ($mux).
+Removed cell wbqspiflash.$procmux$1670 ($mux).
+Removed cell wbqspiflash.$procmux$1673 ($mux).
+Removed cell wbqspiflash.$procmux$1682 ($mux).
+Removed cell wbqspiflash.$procmux$1685 ($mux).
+Removed cell wbqspiflash.$procmux$1688 ($mux).
+Removed cell wbqspiflash.$procmux$1691 ($mux).
+Removed cell wbqspiflash.$procmux$1694 ($mux).
+Removed cell wbqspiflash.$procmux$1846 ($mux).
+Removed cell wbqspiflash.$procmux$1848 ($mux).
+Removed cell wbqspiflash.$procmux$1854 ($mux).
+Removed cell wbqspiflash.$procmux$1856 ($mux).
+Removed cell wbqspiflash.$procmux$1858 ($mux).
+Removed cell wbqspiflash.$procmux$1861 ($mux).
+Removed cell wbqspiflash.$procmux$1868 ($mux).
+Removed cell wbqspiflash.$procmux$1870 ($mux).
+Removed cell wbqspiflash.$procmux$1876 ($mux).
+Removed cell wbqspiflash.$procmux$1890 ($mux).
+Removed cell wbqspiflash.$procmux$1893 ($mux).
+Removed cell wbqspiflash.$procmux$1896 ($mux).
+Removed cell wbqspiflash.$procmux$1915 ($mux).
+Removed cell wbqspiflash.$procmux$1918 ($mux).
+Removed cell wbqspiflash.$procmux$1921 ($mux).
+Removed cell wbqspiflash.$procmux$1924 ($mux).
+Removed cell wbqspiflash.$procmux$1927 ($mux).
+Removed cell wbqspiflash.$procmux$1930 ($mux).
+Removed cell wbqspiflash.$procmux$1935 ($mux).
+Removed cell wbqspiflash.$procmux$1938 ($mux).
+Removed cell wbqspiflash.$procmux$1985 ($mux).
+Removed cell wbqspiflash.$procmux$1988 ($mux).
+Removed cell wbqspiflash.$procmux$1991 ($mux).
+Removed cell wbqspiflash.$procmux$2003 ($mux).
+Removed cell wbqspiflash.$procmux$2015 ($mux).
+Removed cell wbqspiflash.$procmux$2034 ($mux).
+Removed cell wbqspiflash.$procmux$2039 ($mux).
+Removed cell wbqspiflash.$procmux$2042 ($mux).
+Removed cell wbqspiflash.$procmux$2051 ($mux).
+Removed top 1 bits (of 2) from mux cell wbqspiflash.$procmux$2069 ($pmux).
+Removed cell wbqspiflash.$procmux$2078 ($mux).
+Removed cell wbqspiflash.$procmux$2091 ($mux).
+Removed cell wbqspiflash.$procmux$2098 ($mux).
+Removed cell wbqspiflash.$procmux$2103 ($mux).
+Removed cell wbqspiflash.$procmux$2106 ($mux).
+Removed top 1 bits (of 2) from mux cell wbqspiflash.$procmux$2109 ($mux).
+Removed cell wbqspiflash.$procmux$2114 ($mux).
+Removed cell wbqspiflash.$procmux$2122 ($mux).
+Removed cell wbqspiflash.$procmux$2133 ($mux).
+Removed cell wbqspiflash.$procmux$2135 ($mux).
+Removed cell wbqspiflash.$procmux$2148 ($mux).
+Removed cell wbqspiflash.$procmux$2165 ($mux).
+Removed cell wbqspiflash.$procmux$2173 ($mux).
+Removed cell wbqspiflash.$procmux$2176 ($mux).
+Removed cell wbqspiflash.$procmux$2188 ($mux).
+Removed cell wbqspiflash.$procmux$2200 ($mux).
+Removed cell wbqspiflash.$procmux$2212 ($mux).
+Removed cell wbqspiflash.$procmux$2220 ($mux).
+Removed cell wbqspiflash.$procmux$2225 ($mux).
+Removed cell wbqspiflash.$procmux$2228 ($mux).
+Removed cell wbqspiflash.$procmux$2231 ($mux).
+Removed cell wbqspiflash.$procmux$2237 ($mux).
+Removed cell wbqspiflash.$procmux$2264 ($mux).
+Removed cell wbqspiflash.$procmux$2277 ($mux).
+Removed cell wbqspiflash.$procmux$2284 ($mux).
+Removed cell wbqspiflash.$procmux$2289 ($mux).
+Removed cell wbqspiflash.$procmux$2292 ($mux).
+Removed top 2 bits (of 32) from mux cell wbqspiflash.$procmux$2295 ($mux).
+Removed cell wbqspiflash.$procmux$2300 ($mux).
+Removed cell wbqspiflash.$procmux$2308 ($mux).
+Removed cell wbqspiflash.$procmux$2319 ($mux).
+Removed cell wbqspiflash.$procmux$2321 ($mux).
+Removed cell wbqspiflash.$procmux$2334 ($mux).
+Removed cell wbqspiflash.$procmux$2351 ($mux).
+Removed cell wbqspiflash.$procmux$2359 ($mux).
+Removed cell wbqspiflash.$procmux$2365 ($mux).
+Removed cell wbqspiflash.$procmux$2371 ($mux).
+Removed cell wbqspiflash.$procmux$2374 ($mux).
+Removed cell wbqspiflash.$procmux$2377 ($mux).
+Removed cell wbqspiflash.$procmux$2380 ($mux).
+Removed cell wbqspiflash.$procmux$2389 ($mux).
+Removed cell wbqspiflash.$procmux$2398 ($mux).
+Removed cell wbqspiflash.$procmux$2403 ($mux).
+Removed cell wbqspiflash.$procmux$2406 ($mux).
+Removed cell wbqspiflash.$procmux$2409 ($mux).
+Removed cell wbqspiflash.$procmux$2415 ($mux).
+Removed top 1 bits (of 2) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4495 ($ne).
+Removed cell wbqspiflash.$procmux$2430 ($mux).
+Removed cell wbqspiflash.$procmux$2448 ($mux).
+Removed cell wbqspiflash.$procmux$2451 ($mux).
+Removed cell wbqspiflash.$procmux$2454 ($mux).
+Removed cell wbqspiflash.$procmux$2457 ($mux).
+Removed cell wbqspiflash.$procmux$2460 ($mux).
+Removed cell wbqspiflash.$procmux$2463 ($mux).
+Removed cell wbqspiflash.$procmux$2466 ($mux).
+Removed cell wbqspiflash.$procmux$2469 ($mux).
+Removed cell wbqspiflash.$procmux$2480 ($mux).
+Removed cell wbqspiflash.$procmux$2494 ($mux).
+Removed cell wbqspiflash.$procmux$2497 ($mux).
+Removed cell wbqspiflash.$procmux$2500 ($mux).
+Removed cell wbqspiflash.$procmux$2506 ($mux).
+Removed cell wbqspiflash.$procmux$2509 ($mux).
+Removed cell wbqspiflash.$procmux$2512 ($mux).
+Removed cell wbqspiflash.$procmux$2539 ($mux).
+Removed cell wbqspiflash.$procmux$2542 ($mux).
+Removed cell wbqspiflash.$procmux$2545 ($mux).
+Removed cell wbqspiflash.$procmux$2548 ($mux).
+Removed cell wbqspiflash.$procmux$2551 ($mux).
+Removed cell wbqspiflash.$procmux$2554 ($mux).
+Removed top 2 bits (of 4) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4434 ($ne).
+Removed cell wbqspiflash.$procmux$2580 ($mux).
+Removed cell wbqspiflash.$procmux$2592 ($mux).
+Removed top 1 bits (of 12) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4416 ($ne).
+Removed top 1 bits (of 13) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4414 ($ne).
+Removed top 1 bits (of 14) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4412 ($ne).
+Removed top 2 bits (of 5) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4404 ($ne).
+Removed top 1 bits (of 4) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4400 ($ne).
+Removed cell wbqspiflash.$procmux$2838 ($mux).
+Removed cell wbqspiflash.$procmux$2847 ($mux).
+Removed cell wbqspiflash.$procmux$2851 ($mux).
+Removed cell wbqspiflash.$procmux$2854 ($mux).
+Removed cell wbqspiflash.$procmux$2857 ($mux).
+Removed cell wbqspiflash.$procmux$2860 ($mux).
+Removed cell wbqspiflash.$procmux$2863 ($mux).
+Removed cell wbqspiflash.$procmux$2866 ($mux).
+Removed cell wbqspiflash.$procmux$2869 ($mux).
+Removed cell wbqspiflash.$procmux$2872 ($mux).
+Removed cell wbqspiflash.$procmux$2875 ($mux).
+Removed cell wbqspiflash.$procmux$2878 ($mux).
+Removed cell wbqspiflash.$procmux$2881 ($mux).
+Removed cell wbqspiflash.$procmux$2884 ($mux).
+Removed cell wbqspiflash.$procmux$2887 ($mux).
+Removed cell wbqspiflash.$procmux$2890 ($mux).
+Removed cell wbqspiflash.$procmux$2893 ($mux).
+Removed cell wbqspiflash.$procmux$2896 ($mux).
+Removed cell wbqspiflash.$procmux$2899 ($mux).
+Removed cell wbqspiflash.$procmux$2902 ($mux).
+Removed cell wbqspiflash.$procmux$2905 ($mux).
+Removed cell wbqspiflash.$procmux$2908 ($mux).
+Removed cell wbqspiflash.$procmux$2911 ($mux).
+Removed cell wbqspiflash.$procmux$2914 ($mux).
+Removed cell wbqspiflash.$procmux$2917 ($mux).
+Removed cell wbqspiflash.$procmux$2920 ($mux).
+Removed cell wbqspiflash.$procmux$2923 ($mux).
+Removed cell wbqspiflash.$procmux$2926 ($mux).
+Removed cell wbqspiflash.$procmux$2938 ($mux).
+Removed cell wbqspiflash.$procmux$2940 ($mux).
+Removed cell wbqspiflash.$procmux$2946 ($mux).
+Removed cell wbqspiflash.$procmux$2952 ($mux).
+Removed cell wbqspiflash.$procmux$2957 ($mux).
+Removed cell wbqspiflash.$procmux$2960 ($mux).
+Removed cell wbqspiflash.$procmux$2964 ($mux).
+Removed cell wbqspiflash.$procmux$2969 ($mux).
+Removed cell wbqspiflash.$procmux$2972 ($mux).
+Removed cell wbqspiflash.$procmux$2975 ($mux).
+Removed cell wbqspiflash.$procmux$2978 ($mux).
+Removed cell wbqspiflash.$procmux$2981 ($mux).
+Removed cell wbqspiflash.$procmux$2985 ($mux).
+Removed cell wbqspiflash.$procmux$2988 ($mux).
+Removed cell wbqspiflash.$procmux$2998 ($mux).
+Removed cell wbqspiflash.$procmux$3000 ($mux).
+Removed cell wbqspiflash.$procmux$3002 ($mux).
+Removed cell wbqspiflash.$procmux$3005 ($mux).
+Removed cell wbqspiflash.$procmux$3011 ($mux).
+Removed cell wbqspiflash.$procmux$3029 ($mux).
+Removed cell wbqspiflash.$procmux$3059 ($mux).
+Removed cell wbqspiflash.$procmux$3062 ($mux).
+Removed cell wbqspiflash.$procmux$3088 ($mux).
+Removed top 4 bits (of 22) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4233 ($ne).
+Removed top 1 bits (of 11) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3747 ($ne).
+Removed top 3 bits (of 10) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4217 ($ne).
+Removed cell wbqspiflash.$procmux$3240 ($mux).
+Removed cell wbqspiflash.$procmux$3243 ($mux).
+Removed cell wbqspiflash.$procmux$3246 ($mux).
+Removed cell wbqspiflash.$procmux$3249 ($mux).
+Removed cell wbqspiflash.$procmux$3252 ($mux).
+Removed cell wbqspiflash.$procmux$3261 ($mux).
+Removed cell wbqspiflash.$procmux$3269 ($mux).
+Removed cell wbqspiflash.$procmux$3272 ($mux).
+Removed cell wbqspiflash.$procmux$3344 ($mux).
+Removed top 1 bits (of 2) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3765 ($ne).
+Removed top 1 bits (of 9) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4168 ($ne).
+Removed top 2 bits (of 9) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4166 ($ne).
+Removed top 2 bits (of 6) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4158 ($ne).
+Removed cell wbqspiflash.$procmux$3397 ($mux).
+Removed top 1 bits (of 24) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$3523 ($ne).
+Removed top 4 bits (of 8) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4152 ($ne).
+Removed top 1 bits (of 4) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4086 ($ne).
+Removed top 1 bits (of 4) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4074 ($ne).
+Removed top 1 bits (of 3) from port B of cell wbqspiflash.$auto$opt_dff.cc:198:make_patterns_logic$4072 ($ne).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$644 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$639 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$636 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$621 ($mux).
+Removed top 4 bits (of 6) from mux cell wbqspiflash.$flatten\lldriver.$procmux$619 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$613 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$608 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$605 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$598 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$595 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$518 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$515 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$506 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$495 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$492 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$464 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$437 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$434 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$428 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$425 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$422 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$416 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$410 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$407 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$404 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$398 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$390 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$384 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$369 ($mux).
+Removed cell wbqspiflash.$flatten\lldriver.$procmux$346 ($mux).
+Removed top 2 bits (of 3) from mux cell wbqspiflash.$flatten\lldriver.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1467$269 ($mux).
+Removed top 5 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1449$265 ($sub).
+Removed top 3 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263 ($sub).
+Removed top 1 bits (of 3) from port B of cell wbqspiflash.$flatten\lldriver.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1431$261 ($eq).
+Removed top 5 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1422$259 ($eq).
+Removed top 5 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1421$258 ($sub).
+Removed top 3 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1416$257 ($eq).
+Removed top 3 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1415$256 ($sub).
+Removed top 1 bits (of 3) from port B of cell wbqspiflash.$flatten\lldriver.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1405$255 ($eq).
+Removed top 1 bits (of 3) from port B of cell wbqspiflash.$flatten\lldriver.$ne$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1403$252 ($ne).
+Removed top 3 bits (of 6) from mux cell wbqspiflash.$flatten\lldriver.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1386$248 ($mux).
+Removed top 2 bits (of 3) from port B of cell wbqspiflash.$flatten\lldriver.$eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1380$246 ($eq).
+Removed top 1 bits (of 6) from port A of cell wbqspiflash.$flatten\lldriver.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1375$245 ($add).
+Removed top 2 bits (of 6) from port B of cell wbqspiflash.$flatten\lldriver.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1375$245 ($add).
+Removed top 11 bits (of 32) from wire wbqspiflash.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$164_Y.
+Removed top 1 bits (of 6) from wire wbqspiflash.$flatten\lldriver.$procmux$619_Y.
+Removed top 1 bits (of 6) from wire wbqspiflash.$flatten\lldriver.$procmux$621_Y.
+Removed top 3 bits (of 6) from wire wbqspiflash.$flatten\lldriver.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1386$248_Y.
+Removed top 2 bits (of 3) from wire wbqspiflash.$flatten\lldriver.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1467$269_Y.
+Removed top 1 bits (of 5) from wire wbqspiflash.$procmux$1094_Y.
+Removed top 4 bits (of 5) from wire wbqspiflash.$procmux$1149_Y.
+Removed top 3 bits (of 5) from wire wbqspiflash.$procmux$1160_Y.
+Removed top 2 bits (of 5) from wire wbqspiflash.$procmux$1207_Y.
+Removed top 2 bits (of 5) from wire wbqspiflash.$procmux$1210_Y.
+Removed top 1 bits (of 5) from wire wbqspiflash.$procmux$1235_Y.
+Removed top 3 bits (of 5) from wire wbqspiflash.$procmux$1279_Y.
+Removed top 1 bits (of 5) from wire wbqspiflash.$procmux$1308_Y.
+Removed top 3 bits (of 5) from wire wbqspiflash.$procmux$1328_Y.
+Removed top 1 bits (of 2) from wire wbqspiflash.$procmux$2069_Y.
+Removed top 1 bits (of 2) from wire wbqspiflash.$procmux$2109_Y.
+Removed top 2 bits (of 32) from wire wbqspiflash.$procmux$2295_Y.
+Removed top 24 bits (of 32) from wire wbqspiflash.$procmux$2938_Y.
+Removed top 24 bits (of 32) from wire wbqspiflash.$procmux$2940_Y.
+Removed top 1 bits (of 32) from wire wbqspiflash.$procmux$2998_Y.
+Removed top 1 bits (of 32) from wire wbqspiflash.$procmux$3000_Y.
+Removed top 1 bits (of 32) from wire wbqspiflash.$procmux$3002_Y.
+Removed top 1 bits (of 32) from wire wbqspiflash.$procmux$3005_Y.
+Removed top 1 bits (of 32) from wire wbqspiflash.$procmux$3011_Y.
+Removed top 2 bits (of 5) from wire wbqspiflash.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:737$88_Y.
+Removed top 2 bits (of 5) from wire wbqspiflash.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:738$87_Y.
+Removed top 4 bits (of 5) from wire wbqspiflash.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:968$145_Y.
+Removed top 2 bits (of 24) from wire wbqspiflash.w_spif_addr.
+Removed top 2 bits (of 24) from wire wbqspiflash.w_wb_addr.
+
+5.11. Executing PEEPOPT pass (run peephole optimizers).
+
+5.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 2 unused cells and 401 unused wires.
+<suppressed ~3 debug messages>
+
+5.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module wbqspiflash:
+  creating $macc model for $add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$164 ($add).
+  creating $macc model for $flatten\lldriver.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1375$245 ($add).
+  creating $macc model for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1386$249 ($sub).
+  creating $macc model for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1415$256 ($sub).
+  creating $macc model for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1421$258 ($sub).
+  creating $macc model for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263 ($sub).
+  creating $macc model for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1449$265 ($sub).
+  creating $macc model for $sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:246$9 ($sub).
+  creating $alu model for $macc $sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:246$9.
+  creating $alu model for $macc $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1449$265.
+  creating $alu model for $macc $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263.
+  creating $alu model for $macc $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1421$258.
+  creating $alu model for $macc $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1415$256.
+  creating $alu model for $macc $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1386$249.
+  creating $alu model for $macc $flatten\lldriver.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1375$245.
+  creating $alu model for $macc $add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$164.
+  creating $alu cell for $add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1038$164: $auto$alumacc.cc:485:replace_alu$4606
+  creating $alu cell for $flatten\lldriver.$add$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1375$245: $auto$alumacc.cc:485:replace_alu$4609
+  creating $alu cell for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1386$249: $auto$alumacc.cc:485:replace_alu$4612
+  creating $alu cell for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1415$256: $auto$alumacc.cc:485:replace_alu$4615
+  creating $alu cell for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1421$258: $auto$alumacc.cc:485:replace_alu$4618
+  creating $alu cell for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263: $auto$alumacc.cc:485:replace_alu$4621
+  creating $alu cell for $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1449$265: $auto$alumacc.cc:485:replace_alu$4624
+  creating $alu cell for $sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:246$9: $auto$alumacc.cc:485:replace_alu$4627
+  created 8 $alu and 0 $macc cells.
+
+5.14. Executing SHARE pass (SAT-based resource sharing).
+
+5.15. Executing OPT pass (performing simple optimizations).
+
+5.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+<suppressed ~7 debug messages>
+
+5.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~66 debug messages>
+
+5.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+    New ctrl vector for $pmux cell $procmux$1287: { $procmux$1290_CMP $auto$opt_reduce.cc:134:opt_mux$4631 $procmux$1288_CMP }
+    New ctrl vector for $pmux cell $procmux$2075: $auto$opt_reduce.cc:134:opt_mux$4633
+    New ctrl vector for $pmux cell $procmux$2117: { $auto$opt_reduce.cc:134:opt_mux$4635 $procmux$1288_CMP }
+    New ctrl vector for $pmux cell $procmux$2129: $auto$opt_reduce.cc:134:opt_mux$4637
+    New ctrl vector for $pmux cell $procmux$2261: $auto$opt_reduce.cc:134:opt_mux$4639
+    New ctrl vector for $pmux cell $procmux$2303: { $procmux$1290_CMP $auto$opt_reduce.cc:134:opt_mux$4641 $procmux$1288_CMP }
+    New ctrl vector for $pmux cell $procmux$2315: $auto$opt_reduce.cc:134:opt_mux$4643
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$4632: { $procmux$1238_CMP $procmux$1237_CMP $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$4634: { $procmux$1290_CMP $procmux$1289_CMP $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$4636: { $procmux$1290_CMP $procmux$1289_CMP $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$4638: { $procmux$1238_CMP $procmux$1237_CMP $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:822$114_Y }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$4642: { $procmux$1290_CMP $procmux$1289_CMP $eq$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:464$39_Y }
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 12 changes.
+
+5.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+5.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:262:slice$4553 ($dffe) from module wbqspiflash (D = $flatten\lldriver.$procmux$592_Y [2], Q = \lldriver.state [2], rval = 1'0).
+Adding SRST signal on $auto$ff.cc:262:slice$4553 ($dffe) from module wbqspiflash (D = $flatten\lldriver.$procmux$610_Y [1:0], Q = \lldriver.state [1:0], rval = 2'01).
+Adding SRST signal on $auto$ff.cc:262:slice$4398 ($dffe) from module wbqspiflash (D = $procmux$2990_Y [31], Q = \o_wb_data [31], rval = 1'0).
+Adding SRST signal on $auto$ff.cc:262:slice$4398 ($dffe) from module wbqspiflash (D = { $procmux$2966_Y [26:20] $procmux$2966_Y [13:0] }, Q = { \o_wb_data [26:20] \o_wb_data [13:0] }, rval = 21'000000000000000000000).
+Adding SRST signal on $auto$ff.cc:262:slice$4197 ($dffe) from module wbqspiflash (D = $procmux$2347_Y, Q = \spi_in, rval = 889192448).
+Adding SRST signal on $auto$ff.cc:262:slice$4146 ($dffe) from module wbqspiflash (D = $procmux$2161_Y, Q = \spi_len, rval = 2'01).
+
+5.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 3 unused cells and 14 unused wires.
+<suppressed ~4 debug messages>
+
+5.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~69 debug messages>
+
+5.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.15.16. Finished OPT passes. (There is nothing left to do.)
+
+5.16. Executing MEMORY pass.
+
+5.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.16.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.16.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.16.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.16.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.16.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.16.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.18. Executing OPT pass (performing simple optimizations).
+
+5.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+<suppressed ~141 debug messages>
+
+5.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~16 debug messages>
+Removed a total of 4 cells.
+
+5.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:262:slice$4566 ($dffe) from module wbqspiflash (D = $flatten\lldriver.$0\spi_len[5:0] [1:0], Q = \lldriver.spi_len [1:0]).
+
+5.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 4 unused cells and 39 unused wires.
+<suppressed ~5 debug messages>
+
+5.18.5. Rerunning OPT passes. (Removed registers in this run.)
+
+5.18.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.18.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.18.8. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:262:slice$4682 ($dffe) from module wbqspiflash (D = $flatten\lldriver.$procmux$641_Y [2], Q = \lldriver.spi_len [2], rval = 1'0).
+Adding SRST signal on $auto$ff.cc:262:slice$4677 ($dffe) from module wbqspiflash (D = $flatten\lldriver.$procmux$641_Y [1:0], Q = \lldriver.spi_len [1:0], rval = 2'00).
+
+5.18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.18.10. Rerunning OPT passes. (Removed registers in this run.)
+
+5.18.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.18.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.18.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.18.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.18.15. Finished fast OPT passes.
+
+5.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5.20. Executing OPT pass (performing simple optimizations).
+
+5.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~75 debug messages>
+
+5.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$4681: { $auto$opt_dff.cc:197:make_patterns_logic$4678 $auto$opt_dff.cc:197:make_patterns_logic$4479 $auto$opt_dff.cc:197:make_patterns_logic$4481 $auto$opt_dff.cc:197:make_patterns_logic$4483 $auto$opt_dff.cc:197:make_patterns_logic$4562 }
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$367:
+      Old ports: A={ \spi_in [30:0] 1'0 }, B={ \spi_in [27:0] 4'0000 }, Y=$flatten\lldriver.$procmux$367_Y
+      New ports: A=\spi_in [30:0], B={ \spi_in [27:0] 3'000 }, Y=$flatten\lldriver.$procmux$367_Y [31:1]
+      New connections: $flatten\lldriver.$procmux$367_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$379:
+      Old ports: A={ \lldriver.r_word [30:0] 1'0 }, B={ \lldriver.r_word [27:0] 4'0000 }, Y=$flatten\lldriver.$procmux$379_Y
+      New ports: A=\lldriver.r_word [30:0], B={ \lldriver.r_word [27:0] 3'000 }, Y=$flatten\lldriver.$procmux$379_Y [31:1]
+      New connections: $flatten\lldriver.$procmux$379_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$577:
+      Old ports: A=3'101, B=3'000, Y=$flatten\lldriver.$procmux$577_Y
+      New ports: A=1'1, B=1'0, Y=$flatten\lldriver.$procmux$577_Y [0]
+      New connections: $flatten\lldriver.$procmux$577_Y [2:1] = { $flatten\lldriver.$procmux$577_Y [0] 1'0 }
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$619:
+      Old ports: A=2'11, B=2'00, Y=$auto$wreduce.cc:454:run$4578 [1:0]
+      New ports: A=1'1, B=1'0, Y=$auto$wreduce.cc:454:run$4578 [0]
+      New connections: $auto$wreduce.cc:454:run$4578 [1] = $auto$wreduce.cc:454:run$4578 [0]
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$625:
+      Old ports: A={ $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263_Y [5:3] 2'11 $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263_Y [2] }, B={ $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263_Y [5:2] 2'00 }, Y=$flatten\lldriver.$procmux$625_Y
+      New ports: A={ 2'11 $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263_Y [2] }, B={ $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263_Y [2] 2'00 }, Y=$flatten\lldriver.$procmux$625_Y [2:0]
+      New connections: $flatten\lldriver.$procmux$625_Y [5:3] = $flatten\lldriver.$sub$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1446$263_Y [5:3]
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:1386$248:
+      Old ports: A=3'001, B=3'100, Y=$auto$wreduce.cc:454:run$4580 [2:0]
+      New ports: A=2'01, B=2'10, Y={ $auto$wreduce.cc:454:run$4580 [2] $auto$wreduce.cc:454:run$4580 [0] }
+      New connections: $auto$wreduce.cc:454:run$4580 [1] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$1094:
+      Old ports: A=4'0010, B=4'1111, Y=$auto$wreduce.cc:454:run$4582 [3:0]
+      New ports: A=1'0, B=1'1, Y=$auto$wreduce.cc:454:run$4582 [0]
+      New connections: $auto$wreduce.cc:454:run$4582 [3:1] = { $auto$wreduce.cc:454:run$4582 [0] $auto$wreduce.cc:454:run$4582 [0] 1'1 }
+    Consolidated identical input bits for $mux cell $procmux$1108:
+      Old ports: A=5'01111, B=5'11101, Y=$procmux$1108_Y
+      New ports: A=2'01, B=2'10, Y={ $procmux$1108_Y [4] $procmux$1108_Y [1] }
+      New connections: { $procmux$1108_Y [3:2] $procmux$1108_Y [0] } = 3'111
+    Consolidated identical input bits for $mux cell $procmux$1123:
+      Old ports: A=5'01111, B=5'10110, Y=$procmux$1123_Y
+      New ports: A=2'01, B=2'10, Y={ $procmux$1123_Y [4] $procmux$1123_Y [0] }
+      New connections: $procmux$1123_Y [3:1] = { $procmux$1123_Y [0] 2'11 }
+    Consolidated identical input bits for $mux cell $procmux$1245:
+      Old ports: A=5'00010, B=5'11011, Y=$procmux$1245_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1245_Y [0]
+      New connections: $procmux$1245_Y [4:1] = { $procmux$1245_Y [0] $procmux$1245_Y [0] 2'01 }
+    Consolidated identical input bits for $mux cell $procmux$1256:
+      Old ports: A=5'10000, B=5'00010, Y=$procmux$1256_Y
+      New ports: A=2'10, B=2'01, Y={ $procmux$1256_Y [4] $procmux$1256_Y [1] }
+      New connections: { $procmux$1256_Y [3:2] $procmux$1256_Y [0] } = 3'000
+    Consolidated identical input bits for $mux cell $procmux$1279:
+      Old ports: A=2'00, B=2'11, Y=$auto$wreduce.cc:454:run$4588 [1:0]
+      New ports: A=1'0, B=1'1, Y=$auto$wreduce.cc:454:run$4588 [0]
+      New connections: $auto$wreduce.cc:454:run$4588 [1] = $auto$wreduce.cc:454:run$4588 [0]
+    Consolidated identical input bits for $pmux cell $procmux$1287:
+      Old ports: A=5'01110, B=10'0110101011, Y=$procmux$1287_Y
+      New ports: A=3'110, B=6'101011, Y=$procmux$1287_Y [2:0]
+      New connections: $procmux$1287_Y [4:3] = 2'01
+    Consolidated identical input bits for $pmux cell $procmux$1299:
+      Old ports: A={ 1'1 $auto$wreduce.cc:454:run$4589 [3:0] }, B=10'1100111000, Y=$procmux$1299_Y
+      New ports: A=$auto$wreduce.cc:454:run$4589 [3:0], B=8'10011000, Y=$procmux$1299_Y [3:0]
+      New connections: $procmux$1299_Y [4] = 1'1
+    Consolidated identical input bits for $mux cell $procmux$1308:
+      Old ports: A=4'0000, B=4'1011, Y=$auto$wreduce.cc:454:run$4589 [3:0]
+      New ports: A=1'0, B=1'1, Y=$auto$wreduce.cc:454:run$4589 [0]
+      New connections: $auto$wreduce.cc:454:run$4589 [3:1] = { $auto$wreduce.cc:454:run$4589 [0] 1'0 $auto$wreduce.cc:454:run$4589 [0] }
+    Consolidated identical input bits for $mux cell $procmux$1321:
+      Old ports: A={ 3'001 $auto$wreduce.cc:454:run$4584 [1:0] }, B=5'10000, Y=$procmux$1321_Y
+      New ports: A={ 2'01 $auto$wreduce.cc:454:run$4584 [1:0] }, B=4'1000, Y={ $procmux$1321_Y [4] $procmux$1321_Y [2:0] }
+      New connections: $procmux$1321_Y [3] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$1328:
+      Old ports: A=2'00, B=2'11, Y=$auto$wreduce.cc:454:run$4590 [1:0]
+      New ports: A=1'0, B=1'1, Y=$auto$wreduce.cc:454:run$4590 [0]
+      New connections: $auto$wreduce.cc:454:run$4590 [1] = $auto$wreduce.cc:454:run$4590 [0]
+    Consolidated identical input bits for $mux cell $procmux$1994:
+      Old ports: A=2'00, B=2'11, Y=$procmux$1994_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1994_Y [0]
+      New connections: $procmux$1994_Y [1] = $procmux$1994_Y [0]
+    Consolidated identical input bits for $mux cell $procmux$2023:
+      Old ports: A=2'11, B=2'00, Y=$procmux$2023_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$2023_Y [0]
+      New connections: $procmux$2023_Y [1] = $procmux$2023_Y [0]
+    Consolidated identical input bits for $mux cell $procmux$2081:
+      Old ports: A={ 1'0 $auto$wreduce.cc:454:run$4591 [0] }, B=2'00, Y=$procmux$2081_Y
+      New ports: A=$auto$wreduce.cc:454:run$4591 [0], B=1'0, Y=$procmux$2081_Y [0]
+      New connections: $procmux$2081_Y [1] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$2117:
+      Old ports: A=2'01, B=2'00, Y=$procmux$2117_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$2117_Y [0]
+      New connections: $procmux$2117_Y [1] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$2179:
+      Old ports: A=805306368, B={ 10'1101100000 \spif_data [19:14] 16'0000000000000000 }, Y=$procmux$2179_Y
+      New ports: A=8'10000000, B={ 2'01 \spif_data [19:14] }, Y={ $procmux$2179_Y [29] $procmux$2179_Y [27] $procmux$2179_Y [21:16] }
+      New connections: { $procmux$2179_Y [31:30] $procmux$2179_Y [28] $procmux$2179_Y [26:22] $procmux$2179_Y [15:0] } = { $procmux$2179_Y [27] $procmux$2179_Y [27] 22'1000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$2209:
+      Old ports: A={ 10'0000101100 \spif_addr 2'00 }, B={ 10'1110101100 \spif_addr 2'00 }, Y=$procmux$2209_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2209_Y [29]
+      New connections: { $procmux$2209_Y [31:30] $procmux$2209_Y [28:0] } = { $procmux$2209_Y [29] $procmux$2209_Y [29] 7'0101100 \spif_addr 2'00 }
+    Consolidated identical input bits for $pmux cell $procmux$2255:
+      Old ports: A=889192448, B=64'0000010100000000000000000000000010011111000000000000000000000000, Y=$procmux$2255_Y
+      New ports: A=3'110, B=6'000011, Y={ $procmux$2255_Y [29:28] $procmux$2255_Y [25] }
+      New connections: { $procmux$2255_Y [31:30] $procmux$2255_Y [27:26] $procmux$2255_Y [24:0] } = { $procmux$2255_Y [25] 1'0 $procmux$2255_Y [25] 26'11000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$2295:
+      Old ports: A=30'000000000000000000000000000000, B={ \i_wb_addr 10'0010100000 }, Y=$auto$wreduce.cc:454:run$4593 [29:0]
+      New ports: A=21'000000000000000000000, B={ \i_wb_addr 1'1 }, Y={ $auto$wreduce.cc:454:run$4593 [29:10] $auto$wreduce.cc:454:run$4593 [5] }
+      New connections: { $auto$wreduce.cc:454:run$4593 [9:6] $auto$wreduce.cc:454:run$4593 [4:0] } = { 2'00 $auto$wreduce.cc:454:run$4593 [5] 6'000000 }
+    Consolidated identical input bits for $pmux cell $procmux$2303:
+      Old ports: A=889192448, B=64'0000010100000000000000000000000010011111000000000000000000000000, Y=$procmux$2303_Y
+      New ports: A=3'110, B=6'000011, Y={ $procmux$2303_Y [29:28] $procmux$2303_Y [25] }
+      New connections: { $procmux$2303_Y [31:30] $procmux$2303_Y [27:26] $procmux$2303_Y [24:0] } = { $procmux$2303_Y [25] 1'0 $procmux$2303_Y [25] 26'11000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$2332:
+      Old ports: A={ 10'0000101100 \i_wb_addr 2'00 }, B={ 10'1110101100 \i_wb_addr 2'00 }, Y=$procmux$2332_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2332_Y [29]
+      New connections: { $procmux$2332_Y [31:30] $procmux$2332_Y [28:0] } = { $procmux$2332_Y [29] $procmux$2332_Y [29] 7'0101100 \i_wb_addr 2'00 }
+    Consolidated identical input bits for $mux cell $procmux$2944:
+      Old ports: A={ 24'000000000000000000000000 \lldriver.o_word [7:0] }, B={ \lldriver.o_word [0] \dirty_sector \lldriver.o_busy $auto$wreduce.cc:454:run$4596 [28] \quad_mode_enabled 7'0000000 \erased_sector 14'00000000000000 }, Y=$procmux$2944_Y
+      New ports: A={ 11'00000000000 \lldriver.o_word [7:0] }, B={ \lldriver.o_word [0] \dirty_sector \lldriver.o_busy $auto$wreduce.cc:454:run$4596 [28] \quad_mode_enabled \erased_sector 8'00000000 }, Y={ $procmux$2944_Y [31:27] $procmux$2944_Y [19:14] $procmux$2944_Y [7:0] }
+      New connections: { $procmux$2944_Y [26:20] $procmux$2944_Y [13:8] } = 13'0000000000000
+    Consolidated identical input bits for $mux cell $ternary$/home/opentools/OpenLane/designs/wbqspiflash/src/wbqspiflash.v:738$87:
+      Old ports: A=3'111, B=3'010, Y=$auto$wreduce.cc:454:run$4585 [2:0]
+      New ports: A=1'1, B=1'0, Y=$auto$wreduce.cc:454:run$4585 [0]
+      New connections: $auto$wreduce.cc:454:run$4585 [2:1] = { $auto$wreduce.cc:454:run$4585 [0] 1'1 }
+  Optimizing cells in module \wbqspiflash.
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$381:
+      Old ports: A=$flatten\lldriver.$procmux$367_Y, B=$flatten\lldriver.$procmux$379_Y, Y=$flatten\lldriver.$procmux$381_Y
+      New ports: A=$flatten\lldriver.$procmux$367_Y [31:1], B=$flatten\lldriver.$procmux$379_Y [31:1], Y=$flatten\lldriver.$procmux$381_Y [31:1]
+      New connections: $flatten\lldriver.$procmux$381_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$1129:
+      Old ports: A=5'01111, B=$procmux$1123_Y, Y=$procmux$1129_Y
+      New ports: A=2'01, B={ $procmux$1123_Y [4] $procmux$1123_Y [0] }, Y={ $procmux$1129_Y [4] $procmux$1129_Y [0] }
+      New connections: $procmux$1129_Y [3:1] = { $procmux$1129_Y [0] 2'11 }
+    Consolidated identical input bits for $pmux cell $procmux$1241:
+      Old ports: A=$procmux$1245_Y, B=15'110011100000010, Y=$procmux$1241_Y
+      New ports: A={ $procmux$1245_Y [0] 1'1 $procmux$1245_Y [0] }, B=9'101100010, Y={ $procmux$1241_Y [3] $procmux$1241_Y [1:0] }
+      New connections: { $procmux$1241_Y [4] $procmux$1241_Y [2] } = { $procmux$1241_Y [3] 1'0 }
+    Consolidated identical input bits for $mux cell $procmux$1259:
+      Old ports: A=$procmux$1256_Y, B=5'10011, Y=$procmux$1259_Y
+      New ports: A={ $procmux$1256_Y [4] $procmux$1256_Y [1] 1'0 }, B=3'111, Y={ $procmux$1259_Y [4] $procmux$1259_Y [1:0] }
+      New connections: $procmux$1259_Y [3:2] = 2'00
+    Consolidated identical input bits for $mux cell $procmux$1295:
+      Old ports: A=5'11110, B=$procmux$1287_Y, Y=$procmux$1295_Y
+      New ports: A=4'1110, B={ 1'0 $procmux$1287_Y [2:0] }, Y={ $procmux$1295_Y [4] $procmux$1295_Y [2:0] }
+      New connections: $procmux$1295_Y [3] = 1'1
+    Consolidated identical input bits for $pmux cell $procmux$1299:
+      Old ports: A=$auto$wreduce.cc:454:run$4589 [3:0], B=8'10011000, Y=$procmux$1299_Y [3:0]
+      New ports: A={ $auto$wreduce.cc:454:run$4589 [0] $auto$wreduce.cc:454:run$4589 [0] $auto$wreduce.cc:454:run$4589 [0] }, B=6'101100, Y={ $procmux$1299_Y [3] $procmux$1299_Y [1:0] }
+      New connections: $procmux$1299_Y [2] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$1330:
+      Old ports: A=$procmux$1321_Y, B={ 3'100 $auto$wreduce.cc:454:run$4590 [1:0] }, Y=$procmux$1330_Y
+      New ports: A={ $procmux$1321_Y [4] $procmux$1321_Y [2:0] }, B={ 2'10 $auto$wreduce.cc:454:run$4590 [0] $auto$wreduce.cc:454:run$4590 [0] }, Y={ $procmux$1330_Y [4] $procmux$1330_Y [2:0] }
+      New connections: $procmux$1330_Y [3] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$2125:
+      Old ports: A=2'01, B=$procmux$2117_Y, Y=$procmux$2125_Y
+      New ports: A=1'1, B=$procmux$2117_Y [0], Y=$procmux$2125_Y [0]
+      New connections: $procmux$2125_Y [1] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$2182:
+      Old ports: A=$procmux$2179_Y, B={ 8'00000001 \spif_data [7:0] 16'0000000000000000 }, Y=$procmux$2182_Y
+      New ports: A={ $procmux$2179_Y [29] 1'1 $procmux$2179_Y [27] 3'000 $procmux$2179_Y [21:16] }, B={ 4'0001 \spif_data [7:0] }, Y={ $procmux$2182_Y [29:27] $procmux$2182_Y [24:16] }
+      New connections: { $procmux$2182_Y [31:30] $procmux$2182_Y [26:25] $procmux$2182_Y [15:0] } = { $procmux$2182_Y [27] $procmux$2182_Y [27] 18'000000000000000000 }
+    Consolidated identical input bits for $pmux cell $procmux$2204:
+      Old ports: A=$procmux$2209_Y, B=96'000001100000000000000000000000000000010100000000000000000000000010011111000000000000000000000000, Y=$procmux$2204_Y
+      New ports: A={ $procmux$2209_Y [29] $procmux$2209_Y [29] 5'01011 \spif_addr }, B=81'000011000000000000000000000000010100000000000000000000101111100000000000000000000, Y={ $procmux$2204_Y [31] $procmux$2204_Y [29:24] $procmux$2204_Y [21:2] }
+      New connections: { $procmux$2204_Y [30] $procmux$2204_Y [23:22] $procmux$2204_Y [1:0] } = { $procmux$2204_Y [29] 4'0000 }
+    Consolidated identical input bits for $mux cell $procmux$2267:
+      Old ports: A=$procmux$2255_Y, B=100663296, Y=$procmux$2267_Y
+      New ports: A={ $procmux$2255_Y [29:28] $procmux$2255_Y [25] $procmux$2255_Y [25] 1'1 }, B=5'00010, Y={ $procmux$2267_Y [29:27] $procmux$2267_Y [25:24] }
+      New connections: { $procmux$2267_Y [31:30] $procmux$2267_Y [26] $procmux$2267_Y [23:0] } = { $procmux$2267_Y [27] 26'01000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$2311:
+      Old ports: A=83886080, B=$procmux$2303_Y, Y=$procmux$2311_Y
+      New ports: A=3'000, B={ $procmux$2303_Y [29:28] $procmux$2303_Y [25] }, Y={ $procmux$2311_Y [29:28] $procmux$2311_Y [25] }
+      New connections: { $procmux$2311_Y [31:30] $procmux$2311_Y [27:26] $procmux$2311_Y [24:0] } = { $procmux$2311_Y [25] 1'0 $procmux$2311_Y [25] 26'11000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$2948:
+      Old ports: A={ 24'000000000000000000000000 \lldriver.o_word [7:0] }, B=$procmux$2944_Y, Y=$procmux$2948_Y
+      New ports: A={ 11'00000000000 \lldriver.o_word [7:0] }, B={ $procmux$2944_Y [31:27] $procmux$2944_Y [19:14] $procmux$2944_Y [7:0] }, Y={ $procmux$2948_Y [31:27] $procmux$2948_Y [19:14] $procmux$2948_Y [7:0] }
+      New connections: { $procmux$2948_Y [26:20] $procmux$2948_Y [13:8] } = 13'0000000000000
+  Optimizing cells in module \wbqspiflash.
+    Consolidated identical input bits for $mux cell $flatten\lldriver.$procmux$392:
+      Old ports: A=$flatten\lldriver.$procmux$381_Y, B={ $flatten\lldriver.$procmux$379_Y [31:1] 1'0 }, Y=$flatten\lldriver.$procmux$392_Y
+      New ports: A=$flatten\lldriver.$procmux$381_Y [31:1], B=$flatten\lldriver.$procmux$379_Y [31:1], Y=$flatten\lldriver.$procmux$392_Y [31:1]
+      New connections: $flatten\lldriver.$procmux$392_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$1261:
+      Old ports: A=5'00010, B=$procmux$1259_Y, Y=$procmux$1261_Y
+      New ports: A=3'010, B={ $procmux$1259_Y [4] $procmux$1259_Y [1:0] }, Y={ $procmux$1261_Y [4] $procmux$1261_Y [1:0] }
+      New connections: $procmux$1261_Y [3:2] = 2'00
+    Consolidated identical input bits for $mux cell $procmux$2138:
+      Old ports: A=$procmux$2125_Y, B=2'00, Y=$procmux$2138_Y
+      New ports: A=$procmux$2125_Y [0], B=1'0, Y=$procmux$2138_Y [0]
+      New connections: $procmux$2138_Y [1] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$2185:
+      Old ports: A=$procmux$2182_Y, B={ 8'00000001 \last_status \spif_data [7:0] 8'00000000 }, Y=$procmux$2185_Y
+      New ports: A={ $procmux$2182_Y [29:27] $procmux$2182_Y [24:16] 8'00000000 }, B={ 4'0001 \last_status \spif_data [7:0] }, Y={ $procmux$2185_Y [29:27] $procmux$2185_Y [24:8] }
+      New connections: { $procmux$2185_Y [31:30] $procmux$2185_Y [26:25] $procmux$2185_Y [7:0] } = { $procmux$2185_Y [27] $procmux$2185_Y [27] 10'0000000000 }
+    Consolidated identical input bits for $mux cell $procmux$2324:
+      Old ports: A=$procmux$2311_Y, B=100663296, Y=$procmux$2324_Y
+      New ports: A={ $procmux$2311_Y [29:28] $procmux$2311_Y [25] $procmux$2311_Y [25] 1'1 }, B=5'00010, Y={ $procmux$2324_Y [29:27] $procmux$2324_Y [25:24] }
+      New connections: { $procmux$2324_Y [31:30] $procmux$2324_Y [26] $procmux$2324_Y [23:0] } = { $procmux$2324_Y [27] 26'01000000000000000000000000 }
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 48 changes.
+
+5.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+5.20.6. Executing OPT_SHARE pass.
+
+5.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+5.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+<suppressed ~11 debug messages>
+
+5.20.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.20.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+5.20.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.20.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.20.14. Executing OPT_SHARE pass.
+
+5.20.15. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:262:slice$4478 ($dffe) from module wbqspiflash (D = \spi_in [0], Q = \lldriver.r_word [0], rval = 1'0).
+
+5.20.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+5.20.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.20.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.20.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+5.20.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+5.20.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+5.20.22. Executing OPT_SHARE pass.
+
+5.20.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.20.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+5.20.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+5.20.26. Finished OPT passes. (There is nothing left to do.)
+
+5.21. Executing TECHMAP pass (map to technology primitives).
+
+5.21.1. Executing Verilog-2005 frontend: /home/opentools/OpenLane/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/opentools/OpenLane/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$b3c20b05d9b1fc2c940ef2f6c917486aead042e8\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$24fb226dd75c9d3f6955ec2ad61d794776778cf6\_90_pmux for cells of type $pmux.
+Using template $paramod$c2e415ef15bc3ccd2723772353a6b450d3d76206\_90_pmux for cells of type $pmux.
+Using template $paramod$85df5dc01c7df96a7d8e5f1fdf76ce9ac452af63\_90_pmux for cells of type $pmux.
+Using template $paramod$32e7c4d6f92ff4337599ece53082d2e88a82a9f2\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $dffe.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using template $paramod$c555f921704f4a0970c45571cfda1a59468c235d\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $sdffce.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $dff.
+Using template $paramod$dda8c3c4c16f48e814635535d33f1885d9d0fd30\_90_alu for cells of type $alu.
+Using template $paramod$1eb759649286d7485bd82f4dfc30385bade4b4b3\_90_alu for cells of type $alu.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using template $paramod$a04dd9d4d8b430140c4ff94b50470fb380fda2a0\_90_alu for cells of type $alu.
+Using template $paramod$8742280fdebca84e1c87f2a86ed84f62d558f4cc\_90_alu for cells of type $alu.
+Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000010101 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001010 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2133 debug messages>
+
+5.22. Executing OPT pass (performing simple optimizations).
+
+5.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+<suppressed ~3575 debug messages>
+
+5.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~4482 debug messages>
+Removed a total of 1494 cells.
+
+5.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 85 unused cells and 1683 unused wires.
+<suppressed ~86 debug messages>
+
+5.22.5. Finished fast OPT passes.
+
+5.23. Executing ABC pass (technology mapping using ABC).
+
+5.23.1. Extracting gate netlist of module `\wbqspiflash' to `<abc-temp-dir>/input.blif'..
+Extracted 2910 gates and 3189 wires to a netlist network with 276 inputs and 233 outputs.
+
+5.23.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       57
+ABC RESULTS:            ANDNOT cells:      576
+ABC RESULTS:               MUX cells:      744
+ABC RESULTS:              NAND cells:      145
+ABC RESULTS:               NOR cells:      156
+ABC RESULTS:               NOT cells:      133
+ABC RESULTS:                OR cells:      799
+ABC RESULTS:             ORNOT cells:      151
+ABC RESULTS:              XNOR cells:        6
+ABC RESULTS:               XOR cells:       79
+ABC RESULTS:        internal signals:     2680
+ABC RESULTS:           input signals:      276
+ABC RESULTS:          output signals:      233
+Removing temp directory.
+
+5.24. Executing OPT pass (performing simple optimizations).
+
+5.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+<suppressed ~160 debug messages>
+
+5.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+5.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 6 unused cells and 1495 unused wires.
+<suppressed ~7 debug messages>
+
+5.24.5. Finished fast OPT passes.
+
+5.25. Executing HIERARCHY pass (managing design hierarchy).
+
+5.25.1. Analyzing design hierarchy..
+Top module:  \wbqspiflash
+
+5.25.2. Analyzing design hierarchy..
+Top module:  \wbqspiflash
+Removed 0 unused modules.
+
+5.26. Printing statistics.
+
+=== wbqspiflash ===
+
+   Number of wires:               2871
+   Number of wire bits:           3295
+   Number of public wires:          70
+   Number of public wire bits:     485
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3098
+     $_ANDNOT_                     571
+     $_AND_                         55
+     $_DFFE_PP_                    178
+     $_DFF_P_                        1
+     $_MUX_                        744
+     $_NAND_                       142
+     $_NOR_                        147
+     $_NOT_                        127
+     $_ORNOT_                      149
+     $_OR_                         798
+     $_SDFFCE_PN0P_                 22
+     $_SDFFCE_PP0N_                  1
+     $_SDFFCE_PP0P_                 36
+     $_SDFFCE_PP1P_                  6
+     $_SDFFE_PN0P_                   1
+     $_SDFFE_PN1P_                   1
+     $_SDFFE_PP0N_                   2
+     $_SDFFE_PP0P_                  19
+     $_SDFFE_PP1P_                   9
+     $_SDFF_PP0_                     1
+     $_SDFF_PP1_                     3
+     $_XNOR_                         6
+     $_XOR_                         79
+
+5.27. Executing CHECK pass (checking for obvious problems).
+Checking module wbqspiflash...
+Found and reported 0 problems.
+
+6. Generating Graphviz representation of design.
+Writing dot description to `/home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/tmp/synthesis/post_techmap.dot'.
+Dumping module wbqspiflash to page 1.
+
+7. Executing SHARE pass (SAT-based resource sharing).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wbqspiflash..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wbqspiflash.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wbqspiflash'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wbqspiflash.
+
+8.9. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~19 debug messages>
+
+10. Printing statistics.
+
+=== wbqspiflash ===
+
+   Number of wires:               2852
+   Number of wire bits:           3159
+   Number of public wires:          51
+   Number of public wire bits:     349
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3098
+     $_ANDNOT_                     571
+     $_AND_                         55
+     $_DFFE_PP_                    178
+     $_DFF_P_                        1
+     $_MUX_                        744
+     $_NAND_                       142
+     $_NOR_                        147
+     $_NOT_                        127
+     $_ORNOT_                      149
+     $_OR_                         798
+     $_SDFFCE_PN0P_                 22
+     $_SDFFCE_PP0N_                  1
+     $_SDFFCE_PP0P_                 36
+     $_SDFFCE_PP1P_                  6
+     $_SDFFE_PN0P_                   1
+     $_SDFFE_PN1P_                   1
+     $_SDFFE_PP0N_                   2
+     $_SDFFE_PP0P_                  19
+     $_SDFFE_PP1P_                   9
+     $_SDFF_PP0_                     1
+     $_SDFF_PP1_                     3
+     $_XNOR_                         6
+     $_XOR_                         79
+
+mapping tbuf
+
+11. Executing TECHMAP pass (map to technology primitives).
+
+11.1. Executing Verilog-2005 frontend: /home/opentools/OpenLane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/opentools/OpenLane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+11.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+12. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+13. Executing TECHMAP pass (map to technology primitives).
+
+13.1. Executing Verilog-2005 frontend: /home/opentools/OpenLane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/opentools/OpenLane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+13.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+14. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+15. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+15.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\wbqspiflash':
+  mapped 280 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+
+16. Printing statistics.
+
+=== wbqspiflash ===
+
+   Number of wires:               3228
+   Number of wire bits:           3535
+   Number of public wires:          51
+   Number of public wire bits:     349
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3474
+     $_ANDNOT_                     571
+     $_AND_                         55
+     $_MUX_                       1120
+     $_NAND_                       142
+     $_NOR_                        147
+     $_NOT_                        127
+     $_ORNOT_                      149
+     $_OR_                         798
+     $_XNOR_                         6
+     $_XOR_                         79
+     sky130_fd_sc_hd__dfxtp_2      280
+
+[INFO]: USING STRATEGY DELAY 0
+
+17. Executing ABC pass (technology mapping using ABC).
+
+17.1. Extracting gate netlist of module `\wbqspiflash' to `/tmp/yosys-abc-cIbTMi/input.blif'..
+Extracted 3194 gates and 3536 wires to a netlist network with 340 inputs and 288 outputs.
+
+17.1.1. Executing ABC.
+Running ABC command: /home/opentools/OpenLane/install/bin/yosys-abc -s -f /tmp/yosys-abc-cIbTMi/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-cIbTMi/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-cIbTMi/input.blif 
+ABC: + read_lib -w /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.07 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.10 sec
+ABC: Memory =    7.77 MB. Time =     0.10 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 5.000000.
+ABC: + read_constr /home/opentools/OpenLane/designs/wbqspiflash/runs/20ns_full_tighter_timing/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + retime -D -D 20000 -M 6 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + map -p -B 0.2 -A 0.9 -M 0 
+ABC: The cell areas are multiplied by the factor: <num_fanins> ^ (0.90).
+ABC: The cell delays are multiplied by the factor: <num_fanins> ^ (0.20).
+ABC: + retime -D -D 20000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 30 -S 750.0 
+ABC: + upsize -D 20000 
+ABC: Current delay (3397.15 ps) does not exceed the target delay (20000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 20000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =   1569 (  7.2 %)   Cap =  7.7 ff (  1.6 %)   Area =    14764.16 ( 92.7 %)   Delay =  5125.36 ps  (  2.3 %)               
+ABC: Path  0 --      54 : 0    1 pi                        A =   0.00  Df =   8.2   -5.1 ps  S =  17.7 ps  Cin =  0.0 ff  Cout =   2.2 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     696 : 1   25 sky130_fd_sc_hd__buf_1    A =   3.75  Df = 643.3 -291.0 ps  S = 862.4 ps  Cin =  2.1 ff  Cout =  74.4 ff  Cmax = 130.0 ff  G = 3399  
+ABC: Path  2 --     761 : 4    1 sky130_fd_sc_hd__nand4_2  A =  12.51  Df = 758.0 -247.4 ps  S = 156.8 ps  Cin =  4.4 ff  Cout =   2.2 ff  Cmax = 200.5 ff  G =   48  
+ABC: Path  3 --     762 : 1   20 sky130_fd_sc_hd__buf_1    A =   3.75  Df =1229.1  -40.0 ps  S = 950.0 ps  Cin =  2.1 ff  Cout =  81.7 ff  Cmax = 130.0 ff  G = 3684  
+ABC: Path  4 --     849 : 4    7 sky130_fd_sc_hd__nor4_2   A =  12.51  Df =1994.7 -507.4 ps  S = 770.4 ps  Cin =  4.3 ff  Cout =  30.7 ff  Cmax =  64.1 ff  G =  676  
+ABC: Path  5 --     874 : 4    4 sky130_fd_sc_hd__nand4_2  A =  12.51  Df =2227.8 -530.5 ps  S = 181.9 ps  Cin =  4.4 ff  Cout =  14.0 ff  Cmax = 200.5 ff  G =  309  
+ABC: Path  6 --     875 : 3    1 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =2487.9 -190.7 ps  S =  38.7 ps  Cin =  2.4 ff  Cout =   4.5 ff  Cmax = 309.5 ff  G =  181  
+ABC: Path  7 --     894 : 5    1 sky130_fd_sc_hd__a221oi_2 A =  15.01  Df =2708.9 -310.8 ps  S = 203.3 ps  Cin =  4.5 ff  Cout =   4.7 ff  Cmax =  96.1 ff  G =   99  
+ABC: Path  8 --     895 : 4    5 sky130_fd_sc_hd__nand4_2  A =  12.51  Df =2888.1 -220.3 ps  S = 144.2 ps  Cin =  4.4 ff  Cout =  16.0 ff  Cmax = 200.5 ff  G =  345  
+ABC: Path  9 --    1614 : 4    2 sky130_fd_sc_hd__o211a_2  A =  10.01  Df =3171.7 -309.0 ps  S =  73.1 ps  Cin =  2.4 ff  Cout =   6.4 ff  Cmax = 268.3 ff  G =  253  
+ABC: Path 10 --    1649 : 4    9 sky130_fd_sc_hd__nor4b_2  A =  15.01  Df =3817.5 -860.7 ps  S = 730.6 ps  Cin =  3.7 ff  Cout =  29.0 ff  Cmax =  65.0 ff  G =  761  
+ABC: Path 11 --    1650 : 1   26 sky130_fd_sc_hd__buf_1    A =   3.75  Df =4638.1-1248.9 ps  S =1014.5 ps  Cin =  2.1 ff  Cout =  87.6 ff  Cmax = 130.0 ff  G = 3990  
+ABC: Path 12 --    1762 : 3    1 sky130_fd_sc_hd__mux2_2   A =  11.26  Df =5125.4-1300.4 ps  S =  63.3 ps  Cin =  2.3 ff  Cout =   5.0 ff  Cmax = 297.6 ff  G =  220  
+ABC: Start-point = pi53 (\spif_addr [0]).  End-point = po135 ($auto$rtlil.cc:2515:MuxGate$17400).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =  340/  288  lat =    0  nd =  1569  edge =   5310  area =5106.63  delay =1826.38  lev = 19
+ABC: + write_blif /tmp/yosys-abc-cIbTMi/output.blif 
+
+17.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a2111o_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:       59
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:       28
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       59
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       33
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:       60
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:       96
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:       35
+ABC RESULTS:   sky130_fd_sc_hd__a32oi_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:       62
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:       18
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__and4bb_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       86
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       27
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:      197
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       36
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:       18
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       44
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor4_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o2111a_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:      106
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:       37
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       37
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:       29
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:       36
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__o32ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o41a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       51
+ABC RESULTS:   sky130_fd_sc_hd__or2b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:       20
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:       54
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        2
+ABC RESULTS:        internal signals:     2908
+ABC RESULTS:           input signals:      340
+ABC RESULTS:          output signals:      288
+Removing temp directory.
+
+18. Executing SETUNDEF pass (replace undef values with defined constants).
+
+19. Executing HILOMAP pass (mapping to constant drivers).
+
+20. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wbqspiflash..
+Removed 0 unused cells and 3534 unused wires.
+<suppressed ~1 debug messages>
+
+22. Executing INSBUF pass (insert buffer cells for connected wires).
+
+23. Executing CHECK pass (checking for obvious problems).
+Checking module wbqspiflash...
+Warning: Wire wbqspiflash.\o_wb_stall is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [31] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [30] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [29] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [28] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [27] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [26] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [25] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [24] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [23] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [22] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [21] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [20] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [19] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [18] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [17] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [16] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [15] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [14] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [13] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [12] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [11] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [10] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [9] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [8] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [7] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [6] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [5] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [4] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [3] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [2] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [1] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_data [0] is used but has no driver.
+Warning: Wire wbqspiflash.\o_wb_ack is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_sck is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_mod [1] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_mod [0] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [3] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [2] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [1] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_dat [0] is used but has no driver.
+Warning: Wire wbqspiflash.\o_qspi_cs_n is used but has no driver.
+Warning: Wire wbqspiflash.\o_interrupt is used but has no driver.
+Found and reported 43 problems.
+
+24. Printing statistics.
+
+=== wbqspiflash ===
+
+   Number of wires:               1822
+   Number of wire bits:           1910
+   Number of public wires:         261
+   Number of public wire bits:     349
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1849
+     sky130_fd_sc_hd__a2111o_2       5
+     sky130_fd_sc_hd__a2111oi_2      2
+     sky130_fd_sc_hd__a211o_2       59
+     sky130_fd_sc_hd__a211oi_2       4
+     sky130_fd_sc_hd__a21bo_2       28
+     sky130_fd_sc_hd__a21boi_2       4
+     sky130_fd_sc_hd__a21o_2        59
+     sky130_fd_sc_hd__a21oi_2       33
+     sky130_fd_sc_hd__a221o_2       60
+     sky130_fd_sc_hd__a221oi_2       2
+     sky130_fd_sc_hd__a22o_2        19
+     sky130_fd_sc_hd__a22oi_2        5
+     sky130_fd_sc_hd__a2bb2o_2      13
+     sky130_fd_sc_hd__a2bb2oi_2      1
+     sky130_fd_sc_hd__a311o_2       23
+     sky130_fd_sc_hd__a311oi_2       6
+     sky130_fd_sc_hd__a31o_2        96
+     sky130_fd_sc_hd__a31oi_2        4
+     sky130_fd_sc_hd__a32o_2        35
+     sky130_fd_sc_hd__a32oi_2        3
+     sky130_fd_sc_hd__a41o_2         6
+     sky130_fd_sc_hd__and2_2        10
+     sky130_fd_sc_hd__and2b_2        6
+     sky130_fd_sc_hd__and3_2        62
+     sky130_fd_sc_hd__and3b_2        6
+     sky130_fd_sc_hd__and4_2        18
+     sky130_fd_sc_hd__and4b_2       19
+     sky130_fd_sc_hd__and4bb_2       5
+     sky130_fd_sc_hd__buf_1         86
+     sky130_fd_sc_hd__dfxtp_2      280
+     sky130_fd_sc_hd__inv_2         27
+     sky130_fd_sc_hd__mux2_2       197
+     sky130_fd_sc_hd__nand2_2       36
+     sky130_fd_sc_hd__nand3_2        4
+     sky130_fd_sc_hd__nand3b_2       6
+     sky130_fd_sc_hd__nand4_2       18
+     sky130_fd_sc_hd__nand4b_2       2
+     sky130_fd_sc_hd__nor2_2        44
+     sky130_fd_sc_hd__nor2b_2        1
+     sky130_fd_sc_hd__nor3_2         5
+     sky130_fd_sc_hd__nor3b_2        2
+     sky130_fd_sc_hd__nor4_2         5
+     sky130_fd_sc_hd__nor4b_2        3
+     sky130_fd_sc_hd__o2111a_2      11
+     sky130_fd_sc_hd__o2111ai_2      9
+     sky130_fd_sc_hd__o211a_2      106
+     sky130_fd_sc_hd__o211ai_2       5
+     sky130_fd_sc_hd__o21a_2        37
+     sky130_fd_sc_hd__o21ai_2       37
+     sky130_fd_sc_hd__o21ba_2        6
+     sky130_fd_sc_hd__o21bai_2      12
+     sky130_fd_sc_hd__o221a_2        7
+     sky130_fd_sc_hd__o221ai_2       4
+     sky130_fd_sc_hd__o22a_2        29
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o2bb2a_2      10
+     sky130_fd_sc_hd__o2bb2ai_2      1
+     sky130_fd_sc_hd__o311a_2       26
+     sky130_fd_sc_hd__o311ai_2       1
+     sky130_fd_sc_hd__o31a_2        36
+     sky130_fd_sc_hd__o31ai_2        4
+     sky130_fd_sc_hd__o32a_2        22
+     sky130_fd_sc_hd__o32ai_2        1
+     sky130_fd_sc_hd__o41a_2         1
+     sky130_fd_sc_hd__or2_2         51
+     sky130_fd_sc_hd__or2b_2         6
+     sky130_fd_sc_hd__or3_2         21
+     sky130_fd_sc_hd__or3b_2        20
+     sky130_fd_sc_hd__or4_2         54
+     sky130_fd_sc_hd__or4b_2        17
+     sky130_fd_sc_hd__or4bb_2        3
+     sky130_fd_sc_hd__xor2_2         2
+
+   Chip area for module '\wbqspiflash': 20719.872000
+
+25. Executing Verilog backend.
+Dumping module `\wbqspiflash'.
+
+Warnings: 43 unique messages, 43 total
+End of script. Logfile hash: 688f775e3f, CPU: user 4.08s system 0.11s, MEM: 41.38 MB peak
+Yosys 0.12+45 (git sha1 cfe940a98, gcc 11.2.0-19ubuntu1 -fPIC -Os)
+Time spent: 57% 2x abc (5 sec), 12% 35x opt_expr (1 sec), ...

@@ -1,0 +1,227 @@
+OpenROAD v2.0-4194-g9d55eaa0c 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/opentools/OpenLane/designs/wbqspiflash/runs/10ns_threshold_min_area/tmp/merged.unpadded.nom.lef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0225]     Created 441 library cells
+[INFO ODB-0226] Finished LEF file:  /home/opentools/OpenLane/designs/wbqspiflash/runs/10ns_threshold_min_area/tmp/merged.unpadded.nom.lef
+[INFO ODB-0127] Reading DEF file: /home/opentools/OpenLane/designs/wbqspiflash/runs/10ns_threshold_min_area/results/routing/wbqspiflash.def
+[INFO ODB-0128] Design: wbqspiflash
+[INFO ODB-0130]     Created 106 pins.
+[INFO ODB-0131]     Created 4760 components and 24664 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 18170 connections.
+[INFO ODB-0133]     Created 1791 nets and 6494 connections.
+[INFO ODB-0134] Finished DEF file: /home/opentools/OpenLane/designs/wbqspiflash/runs/10ns_threshold_min_area/results/routing/wbqspiflash.def
+Net i_wb_addr[13]
+  input9/A (sky130_fd_sc_hd__clkbuf_2)
+    met4
+    PAR:  755.10* Ratio:  400.00 (S.Area)
+
+
+Net i_wb_addr[15]
+  input11/A (sky130_fd_sc_hd__clkbuf_2)
+    met3
+    PAR:  418.28* Ratio:  400.00 (S.Area)
+
+
+Net i_wb_data[1]
+  input38/A (sky130_fd_sc_hd__clkbuf_1)
+    met4
+    PAR:  494.70* Ratio:  400.00 (S.Area)
+
+
+Net i_wb_data[2]
+  input49/A (sky130_fd_sc_hd__clkbuf_1)
+    met4
+    PAR:  720.13* Ratio:  400.00 (S.Area)
+
+
+Net i_wb_data[3]
+  input52/A (sky130_fd_sc_hd__clkbuf_1)
+    met2
+    PAR: 1107.03* Ratio:  400.00 (S.Area)
+
+
+Net i_wb_data[9]
+  input58/A (sky130_fd_sc_hd__clkbuf_1)
+    met4
+    PAR:  596.11* Ratio:  400.00 (S.Area)
+
+
+Net _0249_
+  _2867_/D (sky130_fd_sc_hd__dfxtp_1)
+    met3
+    PAR:  449.41* Ratio:  400.00 (S.Area)
+
+
+Net _0253_
+  _2871_/D (sky130_fd_sc_hd__dfxtp_1)
+    met4
+    PAR: 2847.38* Ratio: 2609.33 (S.Area)
+
+
+Net _0371_
+  _1874_/A2 (sky130_fd_sc_hd__a221o_1)
+  _1850_/A2 (sky130_fd_sc_hd__a221o_1)
+  _2123_/B (sky130_fd_sc_hd__nor2_1)
+  _2045_/B1 (sky130_fd_sc_hd__a211o_1)
+  _1822_/A2 (sky130_fd_sc_hd__a21o_1)
+    met3
+    PAR:  507.45* Ratio:  400.00 (S.Area)
+
+  _1815_/A2 (sky130_fd_sc_hd__a21o_1)
+  _1801_/A2 (sky130_fd_sc_hd__a21o_1)
+  _1794_/A2 (sky130_fd_sc_hd__a21o_1)
+  _1829_/A2 (sky130_fd_sc_hd__a21o_1)
+  _2002_/A2 (sky130_fd_sc_hd__o32a_1)
+  _1808_/A2 (sky130_fd_sc_hd__a21o_1)
+  _2124_/B2 (sky130_fd_sc_hd__a221o_1)
+  _1858_/A2 (sky130_fd_sc_hd__a221o_1)
+  _1882_/B1 (sky130_fd_sc_hd__a221o_1)
+  _1866_/A2 (sky130_fd_sc_hd__a221o_1)
+  _1888_/A2 (sky130_fd_sc_hd__a221o_1)
+  _1840_/A2 (sky130_fd_sc_hd__a221o_1)
+  _1780_/B1 (sky130_fd_sc_hd__a22o_1)
+  _1788_/B1 (sky130_fd_sc_hd__a22o_1)
+  _1892_/A2 (sky130_fd_sc_hd__a221o_1)
+
+Net _0619_
+  _2070_/B (sky130_fd_sc_hd__nor2_1)
+    met2
+    PAR:  436.40* Ratio:  400.00 (S.Area)
+
+
+Net _0625_
+  _2079_/B (sky130_fd_sc_hd__nand2_1)
+    met2
+    PAR:  407.78* Ratio:  400.00 (S.Area)
+
+
+Net _0816_
+  _2413_/A2 (sky130_fd_sc_hd__a22o_1)
+    met3
+    PAR:  677.18* Ratio:  400.00 (S.Area)
+
+
+Net _0866_
+  _2477_/C (sky130_fd_sc_hd__and3_1)
+    met2
+    PAR:  925.11* Ratio:  400.00 (S.Area)
+
+
+Net _0922_
+  _2547_/C (sky130_fd_sc_hd__and3_1)
+    met3
+    PAR:  605.86* Ratio:  400.00 (S.Area)
+
+
+Net erased_sector\[1\]
+  _2023_/A1 (sky130_fd_sc_hd__a21o_1)
+  _2277_/B2 (sky130_fd_sc_hd__a22o_1)
+    met3
+    PAR:  515.05* Ratio:  400.00 (S.Area)
+
+  _2038_/B1 (sky130_fd_sc_hd__a22oi_1)
+  _2033_/B2 (sky130_fd_sc_hd__o2bb2a_1)
+
+Net lldriver.i_word\[10\]
+  _2469_/A1 (sky130_fd_sc_hd__a221o_1)
+  _2473_/A0 (sky130_fd_sc_hd__mux2_1)
+  _2488_/A1 (sky130_fd_sc_hd__mux2_1)
+  _1797_/A1 (sky130_fd_sc_hd__a21o_1)
+    met4
+    PAR:  619.03* Ratio:  400.00 (S.Area)
+
+  _1799_/A0 (sky130_fd_sc_hd__mux2_1)
+  _1798_/A1 (sky130_fd_sc_hd__a311o_1)
+
+Net lldriver.i_word\[15\]
+  _1833_/A1 (sky130_fd_sc_hd__a311o_1)
+  _1832_/A1 (sky130_fd_sc_hd__a21o_1)
+    met4
+    PAR:  446.81* Ratio:  400.00 (S.Area)
+
+  _2496_/A0 (sky130_fd_sc_hd__mux2_1)
+  _2494_/A1 (sky130_fd_sc_hd__a221o_1)
+  _2511_/A1 (sky130_fd_sc_hd__mux2_1)
+  _1834_/A0 (sky130_fd_sc_hd__mux2_1)
+
+Net lldriver.state\[0\]
+  _2414_/B2 (sky130_fd_sc_hd__a32o_1)
+  _1310_/B (sky130_fd_sc_hd__or2_2)
+  _1306_/A (sky130_fd_sc_hd__inv_2)
+  _2322_/B (sky130_fd_sc_hd__nand2_1)
+    met2
+    PAR:  477.81* Ratio:  400.00 (S.Area)
+
+  _2330_/B (sky130_fd_sc_hd__nor2_1)
+  _2334_/A (sky130_fd_sc_hd__nor2_4)
+
+Net net57
+  _2232_/A1 (sky130_fd_sc_hd__mux2_1)
+    met2
+    PAR:  511.44* Ratio:  400.00 (S.Area)
+
+
+Net quad_mode_enabled
+  _2128_/A1 (sky130_fd_sc_hd__mux2_1)
+  _1994_/B2 (sky130_fd_sc_hd__o32a_1)
+  _2001_/B_N (sky130_fd_sc_hd__and4bb_1)
+  _2162_/A (sky130_fd_sc_hd__nand2_1)
+  _2163_/A2 (sky130_fd_sc_hd__a32o_1)
+  _1967_/B (sky130_fd_sc_hd__and2_1)
+  _1955_/A (sky130_fd_sc_hd__inv_2)
+  _1979_/A1 (sky130_fd_sc_hd__o21a_1)
+  _1987_/A3 (sky130_fd_sc_hd__o311a_1)
+  _1962_/A2 (sky130_fd_sc_hd__o21ai_1)
+  _2287_/B2 (sky130_fd_sc_hd__a22o_1)
+    met3
+    PAR:  579.20* Ratio:  400.00 (S.Area)
+
+
+Net spif_addr\[12\]
+  _2114_/A0 (sky130_fd_sc_hd__mux2_1)
+  _1443_/A (sky130_fd_sc_hd__and4_1)
+  _1466_/A (sky130_fd_sc_hd__and4_1)
+  _1450_/A (sky130_fd_sc_hd__xor2_1)
+  _1889_/B2 (sky130_fd_sc_hd__o22a_1)
+  _1823_/A1 (sky130_fd_sc_hd__a21o_1)
+    met3
+    PAR:  492.61* Ratio:  400.00 (S.Area)
+
+
+Net spif_data\[10\]
+  _1793_/A1 (sky130_fd_sc_hd__a22o_1)
+    met3
+    PAR:  550.09* Ratio:  400.00 (S.Area)
+
+  _2234_/A0 (sky130_fd_sc_hd__mux2_1)
+
+Net spif_data\[31\]
+  _2255_/A0 (sky130_fd_sc_hd__mux2_1)
+  _1978_/A1 (sky130_fd_sc_hd__o21a_1)
+  _1536_/C (sky130_fd_sc_hd__and3_1)
+    met3
+    PAR:  464.13* Ratio:  400.00 (S.Area)
+
+  _1717_/B (sky130_fd_sc_hd__nand2_1)
+    met3
+    PAR:  464.13* Ratio:  400.00 (S.Area)
+
+
+Net spif_data\[4\]
+  _2228_/A0 (sky130_fd_sc_hd__mux2_1)
+  _1874_/B2 (sky130_fd_sc_hd__a221o_1)
+  _1808_/A1 (sky130_fd_sc_hd__a21o_1)
+    met4
+    PAR:  469.51* Ratio:  400.00 (S.Area)
+
+  _1760_/A1 (sky130_fd_sc_hd__a221o_1)
+    met4
+    PAR:  469.51* Ratio:  400.00 (S.Area)
+
+  _2060_/A0 (sky130_fd_sc_hd__mux2_1)
+
+[INFO ANT-0002] Found 24 net violations.
+[INFO ANT-0001] Found 26 pin violations.

@@ -1,0 +1,167 @@
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+Startpoint: _3224_ (rising edge-triggered flip-flop clocked by i_clk)
+Endpoint: _3224_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.10    0.00    0.00 ^ _3224_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                  0.04    0.31    0.31 ^ _3224_/Q (sky130_fd_sc_hd__dfxtp_2)
+     2    0.00                           reset_counter[6] (net)
+                  0.04    0.00    0.32 ^ _2536_/A2 (sky130_fd_sc_hd__a211o_2)
+                  0.02    0.10    0.42 ^ _2536_/X (sky130_fd_sc_hd__a211o_2)
+     1    0.00                           _0095_ (net)
+                  0.02    0.00    0.42 ^ _3224_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  0.42   data arrival time
+
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.10    0.10   clock uncertainty
+                          0.00    0.10   clock reconvergence pessimism
+                                  0.10 ^ _3224_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.02    0.08   library hold time
+                                  0.08   data required time
+-----------------------------------------------------------------------------
+                                  0.08   data required time
+                                 -0.42   data arrival time
+-----------------------------------------------------------------------------
+                                  0.34   slack (MET)
+
+
+Startpoint: _3329_ (rising edge-triggered flip-flop clocked by i_clk)
+Endpoint: _3329_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.10    0.00    0.00 ^ _3329_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                  0.04    0.31    0.31 ^ _3329_/Q (sky130_fd_sc_hd__dfxtp_2)
+     2    0.00                           lldriver.o_mod[0] (net)
+                  0.04    0.00    0.32 ^ _2847_/B2 (sky130_fd_sc_hd__a32o_2)
+                  0.04    0.10    0.42 ^ _2847_/X (sky130_fd_sc_hd__a32o_2)
+     1    0.00                           _0200_ (net)
+                  0.04    0.00    0.42 ^ _3329_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  0.42   data arrival time
+
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.10    0.10   clock uncertainty
+                          0.00    0.10   clock reconvergence pessimism
+                                  0.10 ^ _3329_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.02    0.08   library hold time
+                                  0.08   data required time
+-----------------------------------------------------------------------------
+                                  0.08   data required time
+                                 -0.42   data arrival time
+-----------------------------------------------------------------------------
+                                  0.34   slack (MET)
+
+
+Startpoint: _3211_ (rising edge-triggered flip-flop clocked by i_clk)
+Endpoint: _3211_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.10    0.00    0.00 ^ _3211_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                  0.03    0.32    0.32 v _3211_/Q (sky130_fd_sc_hd__dfxtp_2)
+     2    0.01                           dirty_sector (net)
+                  0.03    0.00    0.32 v _2490_/B1 (sky130_fd_sc_hd__o21ai_2)
+                  0.05    0.05    0.37 ^ _2490_/Y (sky130_fd_sc_hd__o21ai_2)
+     1    0.00                           _0785_ (net)
+                  0.05    0.01    0.38 ^ _2491_/B1 (sky130_fd_sc_hd__o21ai_2)
+                  0.02    0.04    0.42 v _2491_/Y (sky130_fd_sc_hd__o21ai_2)
+     1    0.00                           _0082_ (net)
+                  0.02    0.00    0.42 v _3211_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  0.42   data arrival time
+
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.10    0.10   clock uncertainty
+                          0.00    0.10   clock reconvergence pessimism
+                                  0.10 ^ _3211_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.02    0.08   library hold time
+                                  0.08   data required time
+-----------------------------------------------------------------------------
+                                  0.08   data required time
+                                 -0.42   data arrival time
+-----------------------------------------------------------------------------
+                                  0.34   slack (MET)
+
+
+Startpoint: _3372_ (rising edge-triggered flip-flop clocked by i_clk)
+Endpoint: _3372_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.10    0.00    0.00 ^ _3372_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                  0.05    0.32    0.32 ^ _3372_/Q (sky130_fd_sc_hd__dfxtp_2)
+     3    0.01                           lldriver.r_word[3] (net)
+                  0.05    0.00    0.33 ^ _2920_/A1 (sky130_fd_sc_hd__a21o_2)
+                  0.02    0.10    0.42 ^ _2920_/X (sky130_fd_sc_hd__a21o_2)
+     1    0.00                           _0242_ (net)
+                  0.02    0.00    0.43 ^ _3372_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  0.43   data arrival time
+
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.10    0.10   clock uncertainty
+                          0.00    0.10   clock reconvergence pessimism
+                                  0.10 ^ _3372_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.02    0.08   library hold time
+                                  0.08   data required time
+-----------------------------------------------------------------------------
+                                  0.08   data required time
+                                 -0.43   data arrival time
+-----------------------------------------------------------------------------
+                                  0.34   slack (MET)
+
+
+Startpoint: _3373_ (rising edge-triggered flip-flop clocked by i_clk)
+Endpoint: _3373_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.10    0.00    0.00 ^ _3373_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                  0.05    0.32    0.32 ^ _3373_/Q (sky130_fd_sc_hd__dfxtp_2)
+     3    0.01                           lldriver.r_word[4] (net)
+                  0.05    0.00    0.33 ^ _2927_/A1 (sky130_fd_sc_hd__a21o_2)
+                  0.02    0.10    0.42 ^ _2927_/X (sky130_fd_sc_hd__a21o_2)
+     1    0.00                           _0243_ (net)
+                  0.02    0.00    0.43 ^ _3373_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  0.43   data arrival time
+
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.10    0.10   clock uncertainty
+                          0.00    0.10   clock reconvergence pessimism
+                                  0.10 ^ _3373_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.02    0.08   library hold time
+                                  0.08   data required time
+-----------------------------------------------------------------------------
+                                  0.08   data required time
+                                 -0.43   data arrival time
+-----------------------------------------------------------------------------
+                                  0.34   slack (MET)
+
+

@@ -1,0 +1,101 @@
+
+===========================================================================
+report_checks -unconstrained
+============================================================================
+Startpoint: i_wb_we (input port clocked by i_clk)
+Endpoint: _3747_ (rising edge-triggered flip-flop clocked by i_clk)
+Path Group: i_clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.10    0.00    0.00   clock i_clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          1.29    1.29 ^ input external delay
+                  0.08    0.05    1.34 ^ i_wb_we (in)
+     1    0.02                           i_wb_we (net)
+                  0.08    0.00    1.34 ^ _1875_/A (sky130_fd_sc_hd__buf_2)
+                  0.35    0.33    1.68 ^ _1875_/X (sky130_fd_sc_hd__buf_2)
+    14    0.07                           _1505_ (net)
+                  0.35    0.00    1.68 ^ _1876_/B (sky130_fd_sc_hd__nand2_2)
+                  0.16    0.20    1.88 v _1876_/Y (sky130_fd_sc_hd__nand2_2)
+     8    0.03                           _1506_ (net)
+                  0.16    0.00    1.88 v _1877_/A (sky130_fd_sc_hd__inv_2)
+                  0.40    0.35    2.23 ^ _1877_/Y (sky130_fd_sc_hd__inv_2)
+    21    0.09                           _1507_ (net)
+                  0.40    0.00    2.23 ^ _2100_/C (sky130_fd_sc_hd__and3_2)
+                  0.04    0.23    2.46 ^ _2100_/X (sky130_fd_sc_hd__and3_2)
+     1    0.00                           _1729_ (net)
+                  0.04    0.00    2.46 ^ _2101_/A (sky130_fd_sc_hd__and3_2)
+                  0.04    0.15    2.61 ^ _2101_/X (sky130_fd_sc_hd__and3_2)
+     1    0.00                           _1730_ (net)
+                  0.04    0.00    2.61 ^ _2107_/A (sky130_fd_sc_hd__and4_2)
+                  0.16    0.29    2.90 ^ _2107_/X (sky130_fd_sc_hd__and4_2)
+     4    0.03                           _1736_ (net)
+                  0.16    0.00    2.91 ^ _2368_/B (sky130_fd_sc_hd__nand3_2)
+                  0.16    0.16    3.07 v _2368_/Y (sky130_fd_sc_hd__nand3_2)
+     4    0.02                           _0434_ (net)
+                  0.16    0.00    3.07 v _3025_/A (sky130_fd_sc_hd__nand2_2)
+                  0.07    0.11    3.18 ^ _3025_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1006_ (net)
+                  0.07    0.00    3.18 ^ _3028_/A (sky130_fd_sc_hd__nand2_2)
+                  0.03    0.05    3.22 v _3028_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1009_ (net)
+                  0.03    0.00    3.22 v _3029_/A (sky130_fd_sc_hd__nand2_2)
+                  0.05    0.05    3.27 ^ _3029_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.00                           _1010_ (net)
+                  0.05    0.00    3.27 ^ _3031_/A (sky130_fd_sc_hd__nand2_2)
+                  0.04    0.05    3.32 v _3031_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1012_ (net)
+                  0.04    0.00    3.32 v _3033_/A (sky130_fd_sc_hd__nand2_2)
+                  0.05    0.05    3.37 ^ _3033_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.00                           _1014_ (net)
+                  0.05    0.00    3.37 ^ _3035_/A (sky130_fd_sc_hd__nand2_2)
+                  0.04    0.05    3.42 v _3035_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1016_ (net)
+                  0.04    0.00    3.42 v _3038_/A (sky130_fd_sc_hd__nand2_2)
+                  0.05    0.05    3.47 ^ _3038_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1019_ (net)
+                  0.05    0.00    3.47 ^ _3039_/A (sky130_fd_sc_hd__nand2_2)
+                  0.04    0.05    3.52 v _3039_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1020_ (net)
+                  0.04    0.00    3.52 v _3042_/A (sky130_fd_sc_hd__nand2_2)
+                  0.06    0.05    3.57 ^ _3042_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.00                           _1023_ (net)
+                  0.06    0.00    3.57 ^ _3046_/A (sky130_fd_sc_hd__nand3_2)
+                  0.08    0.06    3.63 v _3046_/Y (sky130_fd_sc_hd__nand3_2)
+     1    0.01                           _1027_ (net)
+                  0.08    0.00    3.63 v _3048_/A (sky130_fd_sc_hd__nand2_2)
+                  0.05    0.07    3.70 ^ _3048_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.00                           _1029_ (net)
+                  0.05    0.00    3.70 ^ _3049_/A (sky130_fd_sc_hd__nand2_2)
+                  0.05    0.05    3.75 v _3049_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1030_ (net)
+                  0.05    0.00    3.75 v _3085_/A (sky130_fd_sc_hd__nand2_2)
+                  0.05    0.06    3.81 ^ _3085_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.01                           _1066_ (net)
+                  0.05    0.00    3.81 ^ _3087_/A (sky130_fd_sc_hd__nand2_2)
+                  0.03    0.04    3.85 v _3087_/Y (sky130_fd_sc_hd__nand2_2)
+     1    0.00                           _0122_ (net)
+                  0.03    0.00    3.85 v _3747_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  3.85   data arrival time
+
+                  0.10    6.45    6.45   clock i_clk (rise edge)
+                          0.00    6.45   clock network delay (ideal)
+                         -0.10    6.35   clock uncertainty
+                          0.00    6.35   clock reconvergence pessimism
+                                  6.35 ^ _3747_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.09    6.26   library setup time
+                                  6.26   data required time
+-----------------------------------------------------------------------------
+                                  6.26   data required time
+                                 -3.85   data arrival time
+-----------------------------------------------------------------------------
+                                  2.41   slack (MET)
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+No paths found.
